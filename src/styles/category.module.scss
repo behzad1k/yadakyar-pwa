@@ -1,0 +1,268 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+}
+
+.head {
+  padding: 0 1rem;
+  border-bottom: .5px solid #E7E6E5;
+
+  &Banner {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 380px;
+    overflow: hidden;
+    height: 100px;
+  }
+}
+
+.filters {
+  padding: 16px 0;
+  display: flex;
+  gap: 16px;
+
+  span {
+    color: #6A7798;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #F5F6F6;
+    border-radius: 52px;
+    padding: 6px 8px;
+  }
+}
+
+.shortcuts {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  overflow: auto;
+  border-bottom: .5px solid #E7E6E5;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &Card {
+    width: 86px;
+    flex-shrink: 0;
+  }
+
+  &Img {
+    width: 70px;
+  }
+
+  &Title {
+    color: #00142A;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 13px;
+
+  &Head {
+    width: 165px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 3px 0;
+
+
+    h1 {
+      color: #00142A;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    small {
+      color: #6A7798;
+      font-size: 10px;
+      line-height: 12px;
+    }
+
+    span {
+      color: 00142A;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    &:nth-child(2) {
+      justify-content: space-between;
+    }
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 165px;
+    height: 298px;
+    padding: 10px;
+    border: 1px solid #E7E6E5;
+    border-radius: 8px;
+    color: #00142A;
+
+
+    &Img {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    &Title {
+      font-size: 12px;
+      font-weight: 400;
+
+    }
+
+    &Price {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    &OldPrice {
+      text-align: left;
+      margin-top: -10px;
+      color: #6A7798;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    &Tag {
+      padding: 4px 5px;
+      color: #6A7798;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 14px;
+      border-radius: 4px;
+      background-color: #6a77981a;
+    }
+
+    &DiscountPercent {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 2px;
+      padding: 1px 4px;
+      background-color: #ff000014;
+      border-radius: 4px;
+      align-items: center;
+      color: #F00;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 17px;
+
+      &::after {
+        content: url('/svg/discount.svg');
+        height: 13px;
+      }
+    }
+
+  }
+}
+
+
+
+.filterModal {
+  display: flex;
+  flex-direction: column;
+
+  >span:first-child {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: auto auto 16px auto;
+  }
+
+  &Dropdown {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: .5px solid #E7E6E5;
+    cursor: pointer;
+
+    &::after {
+      content: url('/svg/chevron-left-black.svg');
+    }
+  }
+
+  input[type=text] {
+    font-family: Yekan Bakh;
+    padding: 8px 10px;
+    margin: 16px 8px;
+    border-radius: 23px;
+    border: 1px solid #E7E6E5;
+    background: #FFF;
+    font-size: 12px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: #AAA;
+    }
+  }
+
+  &Check {
+    padding: 8px;
+
+    input[type=checkbox] {
+      visibility: hidden;
+      display: none;
+    }
+
+    label {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: #00142A;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+
+      &::before {
+        content: url('/svg/checkbox.svg');
+        height: 20px;
+      }
+    }
+
+    input:checked~label::before {
+      content: url('/svg/checkbox-checked.svg');
+      height: 20px;
+    }
+  }
+
+
+
+  button {
+    color: #FFF;
+    font-family: Yekan Bakh;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.28px;
+    padding: 14px;
+    border-radius: 32px;
+    background: #E84D0F;
+    border: none;
+    margin-top: 60px;
+  }
+}

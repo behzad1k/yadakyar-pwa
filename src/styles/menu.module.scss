@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  display: flex;
+  background-color: #E84D0F;
+  border-bottom: 1px solid #aaa;
+  padding: 1.5rem;
+  justify-content: space-between;
+
+
+  input {
+    padding: 6px 10px;
+    width: 225px;
+    border-radius: 23px;
+    border: 1px solid #FFF;
+    font-family: Yekan Bakh !important;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: #AAA;
+    }
+
+    &::before {
+      content: url('/public/svg/search.svg');
+      position: absolute;
+      
+    }
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding: 15px 20px;
+    border-bottom: .5px solid #aaa;
+    font-weight: 400;
+    color: #00142A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    &::after {
+      content: url('/svg/chevron-left-gray.svg');
+    }
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px 20px;
+}

@@ -33,22 +33,104 @@ const Home = () => {
           </span>
           <a className={home.carouselLink}>مشاهده همه</a>
         </div>
-        <a href="#">
-          <article className={home.product}>
-            <div className={home.productImg}>
-              <img src="/temp/product-test.png" alt="" />
-            </div>
-            <h2 className={home.productTitle}>
-              لاستیک 195.65.15 یزد تایر گل مرکو fh
-            </h2>
-            <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-            <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-            <span className={home.productDiscountPercent}>٪۳۰</span>
-            <div>
-              <span className={home.productTag}>ارسال فوری</span>
-            </div>
-          </article>
-        </a>
+        <div className={home.carouselScroll}>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+        </div>
       </section>
       <div className={home.wideBanner}>
         <a href="#">
@@ -60,19 +142,99 @@ const Home = () => {
           <span className={home.carouselTitle}>لاستیک</span>
           <a className={home.carouselLink}>مشاهده همه</a>
         </div>
-        <a href="#">
-          <article className={home.productSML}>
-            <div className={home.productImg}>
-              <img src="/temp/product-test.png" alt="" />
-            </div>
-            <div className={home.productSMLDetails}>
-              <h2 className={home.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-            </div>
-          </article>
-        </a>
+        <div className={home.carouselScroll}>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.productSML}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <div className={home.productSMLDetails}>
+                <h2 className={home.productTitle}>
+                  لاستیک 195.65.15 یزد تایر گل مرکو fh
+                </h2>
+                <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              </div>
+            </article>
+          </a>
+        </div>
       </section>
       <section className={home.shortcuts}>
         <div className={home.shortcutsPartReq}>
@@ -136,22 +298,89 @@ const Home = () => {
           <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
           <a className={home.carouselLink}>مشاهده همه</a>
         </div>
-        <a href="#">
-          <article className={home.product}>
-            <div className={home.productImg}>
-              <img src="/temp/product-test.png" alt="" />
-            </div>
-            <h2 className={home.productTitle}>
-              لاستیک 195.65.15 یزد تایر گل مرکو fh
-            </h2>
-            <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-            <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-            <span className={home.productDiscountPercent}>٪۳۰</span>
-            <div>
-              <span className={home.productTag}>ارسال فوری</span>
-            </div>
-          </article>
-        </a>
+        <div className={home.carouselScroll}>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+        </div>
       </section>
       <div className={home.wideBanner}>
         <a href="#">
@@ -163,22 +392,88 @@ const Home = () => {
           <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
           <a className={home.carouselLink}>مشاهده همه</a>
         </div>
-        <a href="#">
-          <article className={home.product}>
-            <div className={home.productImg}>
-              <img src="/temp/product-test.png" alt="" />
-            </div>
-            <h2 className={home.productTitle}>
-              لاستیک 195.65.15 یزد تایر گل مرکو fh
-            </h2>
-            <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-            <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-            <span className={home.productDiscountPercent}>٪۳۰</span>
-            <div>
-              <span className={home.productTag}>ارسال فوری</span>
-            </div>
-          </article>
-        </a>
+        <div className={home.carouselScroll}>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+          <a href="#">
+            <article className={home.product}>
+              <div className={home.productImg}>
+                <img src="/temp/product-test.png" alt="" />
+              </div>
+              <h2 className={home.productTitle}>
+                لاستیک 195.65.15 یزد تایر گل مرکو fh
+              </h2>
+              <span className={home.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
+              <s className={home.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
+              <span className={home.productDiscountPercent}>٪۳۰</span>
+              <div>
+                <span className={home.productTag}>ارسال فوری</span>
+              </div>
+            </article>
+          </a>
+        </div>
       </section>
       <section className={home.blog}>
         <div className={home.blog1}>
