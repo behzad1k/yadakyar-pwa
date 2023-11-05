@@ -1,7 +1,9 @@
 import Home from "@/app/home/page";
 
 const App = () => {
-  return <Home />;        
+  return (
+      <Home />
+    );
 };
 
 export default App;

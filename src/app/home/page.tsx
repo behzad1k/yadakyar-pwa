@@ -1,10 +1,14 @@
+import { Product } from '@/components/cards/Product';
+import { popupSlice } from '@/services/reducers';
 import home from "@/styles/home.module.scss";
 import icon from "@/styles/icons.module.scss";
+import { useDispatch } from 'react-redux';
 
 const Home = () => {
+
   return (
     <main className={home.main}>
-      <div className={home.slider}>
+      <div className={home.slider} >
         <img src="/temp/slider-temp.jpeg" alt="" />
       </div>
       <section className={home.topBanners}>
@@ -34,6 +38,7 @@ const Home = () => {
           <a className={home.carouselLink}>مشاهده همه</a>
         </div>
         <div className={home.carouselScroll}>
+          <Product />
           <a href="#">
             <article className={home.product}>
               <div className={home.productImg}>
