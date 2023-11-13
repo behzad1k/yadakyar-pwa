@@ -38,6 +38,10 @@
   content: url('/svg/chevron-bottom.svg');
 }
 
+.chevronBotWhite{
+  content: url('/svg/chevron-bottom-white.svg');
+}
+
 .filter {
   content: url('/svg/filter.svg');
 }
@@ -52,4 +56,46 @@
 
 .close {
   content: url('/svg/close.svg');
+}
+
+.cartNav {
+  content: url('/svg/cart-nav.svg');
+}
+
+.cartNavOn {
+  content: url('/svg/cart-nav-on.svg');
+}
+
+.sparePartNav {
+  content: url('/svg/spare-part-nav.svg');
+}
+
+.sparePartNavOn {
+  content: url('/svg/spare-part-nav-on.svg');
+}
+
+.menuNav {
+  content: url('/svg/menu-nav.svg');
+}
+
+.menuNavOn {
+  content: url('/svg/menu-nav-on.svg');
+}
+
+.homeNav {
+  content: url('/svg/home-nav.svg');
+
+}
+
+.homeNavOn {
+  content: url('/svg/home-nav-on.svg');
+
+}
+
+.plusOrange {
+  content: url('/svg/plus-orange.svg');
+}
+
+.profile{
+  content: url('/svg/profile.svg');
 }

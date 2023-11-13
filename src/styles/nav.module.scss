@@ -1,0 +1,38 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 74px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.80) -204.05%, #FFF 100%);
+}
+
+.main {
+  width: 90%;
+  height: 80px;
+  padding: 12px 0 8px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  left: 50%;
+  bottom: 40%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-evenly;
+
+
+  span {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    color: var(--Blue-04, #6A7798);
+    font-size: 12px;
+    font-weight: 400;
+
+    i {
+      margin-bottom: auto;
+    }
+  }
+}

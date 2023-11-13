@@ -1,0 +1,178 @@
+.newReq {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 32px);
+  margin: 16px;
+  padding: 20px;
+  font-weight: 400;
+  line-height: 24px;
+
+  i {
+    padding: 4px;
+    border-radius: 50%;
+    background-color: #FEE5E5;
+  }
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #E7E6E5;
+
+  span {
+    width: 50%;
+    padding: 16px;
+    color: #2A363B;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+  }
+
+  small {
+    background-color: #E7E6E5;
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 1px 12px;
+  }
+
+  .active {
+    border-bottom: 2px solid #E84D0F;
+
+    small {
+      background-color: #E84D0F;
+      color: #fff;
+    }
+  }
+}
+
+.inQueue,
+.finished {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+
+
+  &Item {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    border-radius: 8px;
+
+    &Dropdown {
+      width: 100%;
+      display: flex;
+      border: 1px solid #E7E6E5;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    &Title {
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+
+      small {
+        color: #6A7798;
+        font-size: 10px;
+        font-weight: 400;
+      }
+    }
+
+    &Status {
+      color: #D9512C;
+      background: #F7DCD5;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      border-radius: 110px;
+      font-size: 10px;
+      height: 24px;
+      padding: 7px 9px;
+      line-height: 10px;
+      margin-right: auto;
+    }
+
+    &::after {
+      content: url(/svg/chevron-bottom.svg);
+      height: 16px;
+    }
+  }
+}
+
+.inQueue {
+  align-items: center;
+
+  &Car {
+    color: #E84D0F;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 10px;
+    border-radius: 110px;
+    background-color: #FEE5E5;
+    padding: 5px 6px;
+    width: fit-content;
+  }
+
+  &Product {
+    font-size: 12px;
+    font-weight: 400;
+
+    &::before {
+      content: url(/svg/dot-orange.svg);
+      height: 5px;
+      margin-left: 8px;
+  
+    }
+  }
+}
+
+.finished {
+  &Item {
+    &Status {
+      background-color: #E9F5EA;
+      color: #47AB51;
+    }
+
+    &Dropdown {
+      width: 100%;
+    }
+  }
+
+  &Product {
+    display: flex;
+    border: 1px solid #E7E6E5;
+    border-radius: 8px;
+    padding: 16px;
+    align-items: center;
+    gap: 24px;
+
+    i {
+      padding: 4px;
+      border-radius: 50%;
+      background-color: #FEE5E5;
+    }
+
+    &Detail {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      font-weight: 400;
+      gap: 8px;
+
+      span {
+        margin-right: auto;
+        color: #000;
+      }
+    }
+  }
+}

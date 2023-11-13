@@ -1,0 +1,46 @@
+.main {
+  background-color: #E84D0F;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.search {
+
+  input {
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 23px;
+    border: 1px solid #FFF;
+    font-family: Yekan Bakh !important;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: #AAA;
+    }
+  }
+}
+
+.carSelect {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+
+  span {
+    font-weight: 600;
+
+    small {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}

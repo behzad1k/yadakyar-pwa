@@ -1,16 +1,11 @@
 import menu from "@/styles/menu.module.scss";
 import icon from "@/styles/icons.module.scss";
+import Header from "@/components/header/Header";
 
 const Menu = () => {
   return (
     <main className={menu.main}>
-      <section className={menu.head}>
-        <i className={icon.headphone}></i>
-        <form action="">
-          <input type="text" placeholder="جست و جو" />
-        </form>
-        <i className={icon.chevronLeft}></i>
-      </section>
+     <Header />
       <section className={menu.body}>
         <span className={menu.title}>دسته بندی‌ها</span>
         <a href="#">قطعات بدنه</a>
