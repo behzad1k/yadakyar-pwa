@@ -1,0 +1,138 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  padding: 16px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #E84D0F;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  &Icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    color: #AAA;
+
+    div {
+      height: 28px;
+    }
+
+    span {
+      width: 85px;
+    }
+
+  }
+
+  &Titles {
+    display: flex;
+    gap: 27px;
+    justify-content: center;
+
+    span {
+      width: 95px;
+      text-align: center;
+      align-items: center;
+      gap: 16px;
+      color: #2A363B;
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
+}
+
+.addresses {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 8px;
+  gap: 8px;
+
+  >strong {
+    color: #000;
+    padding-right: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &Carousel {
+    padding: 8px;
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      height: 146px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.10);
+
+      &:first-child {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.addressCard {
+  flex-shrink: 0;
+  color: #2A363B;
+  font-size: 12px;
+  font-weight: 400;
+  gap: 10px;
+  width: 257px;
+
+  &Checked{
+    flex-shrink: 0;
+    color: #2A363B;
+    font-size: 12px;
+    font-weight: 400;
+    gap: 10px;
+    width: 257px;
+    border: 1px solid #E84D0F;
+
+    .addressCardHead strong{
+      color: #E84D0F;
+    }
+  }
+
+  &Head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+
+    strong {
+      display: block;
+      color: #000;
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: auto;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import category from "@/styles/category.module.scss";
 import icon from "@/styles/icons.module.scss";
 import search from "@/styles/search.module.scss";
+import helper from "@/styles/helpers.module.scss";
 import Modal from "./modal";
 
 const Category = () => {
@@ -497,7 +498,7 @@ const Category = () => {
             <div className={category.filterModalDropdown}>برند</div>
             <div className={category.filterModalDropdown}>ارتفاع</div>
             <div className={category.filterModalDropdown}>جهت</div>
-            <button>مشاهده نتیجه</button>
+            <button className={helper.wideBtn}>مشاهده نتیجه</button>
           </div>
         </Modal>
         <Modal>
@@ -524,7 +525,7 @@ const Category = () => {
               <input type="checkbox" id="جی پلنت" />
               <label htmlFor="جی پلنت">جی پلنت</label>
             </div>
-            <button>مشاهده نتیجه</button>
+            <button className={helper.wideBtn}>مشاهده نتیجه</button>
           </div>
         </Modal>
       </main>

@@ -3,6 +3,7 @@ import homeHeader from "@/styles/homeHeader.module.scss";
 
 const HomeHeader = () => {
   return (
+
     <header className={homeHeader.main}>
       <div className={homeHeader.icons}>
         <i className={icon.headphone} />

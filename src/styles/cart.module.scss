@@ -1,0 +1,138 @@
+.body {
+  padding: 156px 16px 96px 16px;
+}
+
+.totalPrise {
+  display: flex;
+  background-color: #fff;
+  gap: 8px;
+  align-items: center;
+  padding: 16px;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+
+  &Num {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+
+    small {
+      font-weight: 400;
+    }
+  }
+
+  strong {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .itemsCount {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 4px;
+    margin-right: auto;
+  }
+
+}
+
+.fixBtnBackground {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96px;
+  background-color: #fff;
+  border-top: 1px solid #E7E6E5;
+
+  button {
+    width: calc(100% - 32px);
+  }
+}
+
+.productCard {
+  display: flex;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #E7E6E5;
+  background: var(--White, #FFF);
+
+  &Details {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: calc(100% - 88px);
+  }
+
+
+  &Title {
+    color: #000;
+    font-size: 10px;
+    font-weight: 400;
+  }
+
+  &Price {
+    color: #6A7798;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &Img {
+    width: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &Func {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      padding: 8px;
+      margin-top: auto;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      border-radius: 22px;
+      border: 1px solid #E7E6E5;
+
+      input {
+        text-align: center;
+        width: 40px;
+        border: none;
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    span {
+      color: #2A363B;
+      font-size: 10px;
+      text-decoration-line: underline;
+    }
+  }
+}
