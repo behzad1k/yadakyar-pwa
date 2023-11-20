@@ -21,6 +21,8 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  border-bottom: 1px solid #E7E6E5;
+  padding-bottom: 5px;
 
   &Icons {
     display: flex;
@@ -63,7 +65,7 @@
   padding: 16px 8px;
   gap: 8px;
 
-  >strong {
+  > strong {
     color: #000;
     padding-right: 8px;
     font-size: 16px;
@@ -107,7 +109,7 @@
   gap: 10px;
   width: 257px;
 
-  &Checked{
+  &Checked {
     flex-shrink: 0;
     color: #2A363B;
     font-size: 12px;
@@ -116,7 +118,7 @@
     width: 257px;
     border: 1px solid #E84D0F;
 
-    .addressCardHead strong{
+    .addressCardHead strong {
       color: #E84D0F;
     }
   }
@@ -133,6 +135,214 @@
       font-size: 14px;
       font-weight: 600;
       margin-left: auto;
+    }
+  }
+}
+
+.method {
+  padding: 16px;
+
+  strong {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.methodSelect {
+  padding: 16px 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #E7E6E5;
+    width: 165px;
+    height: 82px;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+
+    span {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: #2A363B;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+
+      small {
+        color: var(--Gray-01, #AAA);
+        text-align: right;
+        font-family: Yekan Bakh;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+      }
+    }
+
+    &::before {
+      content: url("/svg/select-round-not-checked-gray.svg");
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+
+  &Icon {
+    width: 40px;
+    height: 40px;
+    background-color: #E7E6E5;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .methodSelected {
+    border: 1px solid #E84D0F;
+
+    span {
+      color: #E84D0F;
+    }
+
+    &::before {
+      content: url("/svg/select-round-checked.svg");
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .methodSelectIcon {
+      background-color: #FEE5E5;
+    }
+  }
+}
+
+.bill {
+  border-radius: 8px;
+  background: #F5F6F6;
+  margin: 16px;
+  overflow: hidden;
+
+  strong {
+    color: #000;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    border-bottom: 1px dashed #E7E6E5;
+    display: block;
+    padding: 12px 16px;
+  }
+
+  div {
+    padding: 12px 16px;
+    border-bottom: .5px solid #E7E6E5;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-child {
+      padding: 20px 16px;
+      border: none;
+      background-color: #E9F5EA;
+
+      span:last-child {
+        font-size: 16px;
+
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+.bankInfo {
+  padding: 16px;
+  border-radius: 8px;
+  background: #F0F5FE;
+  margin: 16px;
+  overflow: hidden;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+
+  strong {
+    color: #000;
+    border-bottom: 1px dashed #E7E6E5;
+    padding-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &Copy {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    font-family: Avenir, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 1.44px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: auto;
+
+    span {
+      border-right: 1px solid #E7E6E5;
+      text-align: left;
+      width: 100%;
+      color: var(--Text, #00142A);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    i {
+      padding-left: 8px;
+    }
+  }
+
+  &Owner {
+    color: #00142A;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  &Notice {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-top: 16px;
+
+    i {
+      margin-top: 3px;
+    }
+
+    p {
+      color: #6A7798;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.6px;
+
+      span {
+        color: #E84D0F;
+      }
     }
   }
 }

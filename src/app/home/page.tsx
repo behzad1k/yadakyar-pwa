@@ -1,21 +1,20 @@
-import { ProductPrimary } from "@/components/cards/ProductPrimary";
-import { popupSlice } from "@/services/reducers";
-import { fetchData } from '@/app/home/builder';
-import { Product } from '@/components/cards/Product';
+import {ProductPrimary} from "@/components/cards/ProductPrimary";
+import {popupSlice} from "@/services/reducers";
+import {fetchData} from '@/app/home/builder';
+import {Product} from '@/components/cards/Product';
 import globalEnum from '@/enums/globalEnum';
 import home from "@/styles/home.module.scss";
 import icon from "@/styles/icons.module.scss";
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
 import Banners from "./Banners";
 import Blog from "./Blog";
 import ProductSecondary from "@/components/cards/ProductSecondary";
-import { ReactElement } from "react";
+import {ReactElement} from "react";
 import HomeHeader from "@/components/header/HomeHeader";
 
 const Home = async () => {
   const res = await fetchData(); // 300 ms
-  const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
-
+  // const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
   const productsPrimary = [
     {
       title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
@@ -116,32 +115,32 @@ const Home = async () => {
 
   return (
     <>
-      <HomeHeader />
+      <HomeHeader/>
       <main className={home.main}>
-      {bannerSlider.data.map((item: any) =>
-        <a key={item.id} href={item.url} className={home.slider} >
-          <img src={item.image} alt={item.title} />
-        </a>
-      )}
+        {/*{bannerSlider.data.map((item: any) =>*/}
+        {/*  <a key={item.id} href={item.url} className={home.slider} >*/}
+        {/*    <img src={item.image} alt={item.title} />*/}
+        {/*  </a>*/}
+        {/*)}*/}
 
-      <section className={home.topBanners}>
-        <div className={home.topBanners1}>
-          <a href="#">
-            <img src="/temp/top-banner-1.jpeg" alt="" />
-          </a>
-        </div>
-        <div className={home.topBanners2}>
-          <a href="#">
-            <img src="/temp/top-banner-2.jpeg" alt="" />
-          </a>
-        </div>
-        <div className={home.topBanners3}>
-          <a href="#">
-            <img src="/temp/top-banner-3.jpeg" alt="" />
-          </a>
-        </div>
-      </section>
-        <Banners />
+        <section className={home.topBanners}>
+          <div className={home.topBanners1}>
+            <a href="#">
+              <img src="/temp/top-banner-1.jpeg" alt=""/>
+            </a>
+          </div>
+          <div className={home.topBanners2}>
+            <a href="#">
+              <img src="/temp/top-banner-2.jpeg" alt=""/>
+            </a>
+          </div>
+          <div className={home.topBanners3}>
+            <a href="#">
+              <img src="/temp/top-banner-3.jpeg" alt=""/>
+            </a>
+          </div>
+        </section>
+        <Banners/>
         <section className={home.carousel}>
           <div className={home.carouselHead}>
             <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
@@ -151,11 +150,11 @@ const Home = async () => {
             </span>
             <a className={home.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList()}</div>
+          {/*<div className={home.carouselScroll}>{productPrimaryList()}</div>*/}
         </section>
         <div className={home.wideBanner}>
           <a href="#">
-            <img src="/temp/wide-banner.png" alt="" />
+            <img src="/temp/wide-banner.png" alt=""/>
           </a>
         </div>
         <section className={home.carousel}>
@@ -176,7 +175,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -184,7 +183,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -192,7 +191,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -200,7 +199,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -208,7 +207,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -216,7 +215,7 @@ const Home = async () => {
           <a href="#">
             <div className={home.shortcutsOverlayBtn}>
               <span>
-                <img src="#" alt="" />
+                <img src="#" alt=""/>
               </span>
               <span>روغن ماشین</span>
             </div>
@@ -231,7 +230,7 @@ const Home = async () => {
         </section>
         <div className={home.wideBanner}>
           <a href="#">
-            <img src="/temp/wide-banner.png" alt="" />
+            <img src="/temp/wide-banner.png" alt=""/>
           </a>
         </div>
         <section className={home.carousel}>
@@ -241,7 +240,7 @@ const Home = async () => {
           </div>
           <div className={home.carouselScroll}>{productPrimaryList()}</div>
         </section>
-        <Blog />
+        <Blog/>
       </main>
     </>
   );
