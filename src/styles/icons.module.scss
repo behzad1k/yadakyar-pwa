@@ -194,29 +194,73 @@
   content: url("/svg/plus-black-small.svg");
 }
 
-.headphoneOrange{
+.headphoneOrange {
   content: url("/svg/headphones-orange.svg");
 }
 
-.shippingProgressChecked{
+.shippingProgressChecked {
   content: url("/svg/shipping-progress-completed.svg");
 }
 
-.shippingProgressCurrent{
-content: url("/svg/shipping-in-progress.svg");
+.shippingProgressCurrent {
+  content: url("/svg/shipping-in-progress.svg");
 }
 
-.shippingProgressNext{
+.shippingProgressNext {
   content: url("/svg/shipping-progress-next.svg");
 }
 
-.checkBoxRound{
+.checkBoxRound {
   content: url("/svg/select-round-not-checked.svg");
 }
-.checkBoxRoundChecked{
+
+.checkBoxRoundChecked {
   content: url("/svg/select-round-checked.svg");
 }
 
-.options{
+.options {
   content: url("/svg/options.svg");
+}
+
+.postLogo {
+  content: url("/svg/post-logo.svg");
+}
+
+.postLogoSelected {
+  content: url("/svg/post-logo-orange.svg");
+}
+
+
+.tipaxLogo {
+  content: url("/svg/tipax-logo.svg");
+}
+
+.tipaxLogoSelected {
+  content: url("/svg/tipax-logo-orange.svg");
+}
+
+
+.transportCar {
+  content: url("/svg/transport-car.svg");
+}
+
+.transportCarSelected {
+  content: url("/svg/transport-car-orange.svg");
+}
+
+
+.transportMotor {
+  content: url("/svg/transport-motor.svg");
+}
+
+.transportMotorSelected {
+  content: url("/svg/transport-motor-orange.svg");
+}
+
+.copy {
+  content: url("/svg/copy.svg");
+}
+
+.info{
+  content: url("/svg/info.svg");
 }
