@@ -9,6 +9,7 @@ const ProductSecondary = ({
   price: number;
   img: string;
 }) => {
+
   return (
     <a href="#">
       <article className={home.productSML}>

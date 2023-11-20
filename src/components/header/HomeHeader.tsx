@@ -1,5 +1,6 @@
 import icon from "@/styles/icons.module.scss";
 import homeHeader from "@/styles/homeHeader.module.scss";
+import Link from 'next/link';
 
 const HomeHeader = () => {
   return (
@@ -10,7 +11,9 @@ const HomeHeader = () => {
         <div className={homeHeader.logo}>
           <img src="/logo-white.png" alt="" />
         </div>
-        <i className={icon.profile} />
+        {<Link href="/profile">
+          <i className={icon.profile}/>
+        </Link>}
       </div>
       <div className={homeHeader.search}>
         <form action="">

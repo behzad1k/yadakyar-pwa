@@ -1,9 +1,21 @@
+"use client"
 import Header from "@/components/header/Header";
+import restApi from '@/services/restApi';
+import { useEffect } from 'react';
 import TitleHeader from "./components/TitleHeader";
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 
 const Profile = () => {
+
+  const fetchData = async () => {
+    const res = await restApi('http://localhost:8080/profile', true).get
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <main className={profile.main}>
       <TitleHeader />

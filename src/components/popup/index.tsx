@@ -1,21 +1,30 @@
 "use client"
 import { useAppSelector } from '@/services/store';
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 
 const Popup = () => {
   const popupReducer = useAppSelector(state => state.popupReducer);
+
   const list = () => {
-    const rows: any[] = []
+    const rows: any[] = [];
+
     popupReducer.popups.forEach((item, index) => {
       rows.push(
-        <div style={{width: 1000, height: 1000, zIndex: 1000, }}>
-          hiii
+        <div style={{ ...item.style,display: item.visible ? 'inline-flex' : 'none'}}>
+          {item.content}
         </div>
       )
     });
     return rows;
   }
+
+  useEffect(() => {
+    if (popupReducer.popups.length > 0 && popupReducer.popups[0].visible) {
+      document.body.classList.add('onPopup');
+    } else {
+      document.body.classList.remove('onPopup');
+    }
+  }, [popupReducer.popups.length]);
 
   return (
     <>
@@ -23,4 +32,5 @@ const Popup = () => {
     </>
   )
 };
+
 export default Popup;

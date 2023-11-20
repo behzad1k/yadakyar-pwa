@@ -14,7 +14,7 @@ import HomeHeader from "@/components/header/HomeHeader";
 
 const Home = async () => {
   const res = await fetchData(); // 300 ms
-  const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
+  // const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
 
   const productsPrimary = [
     {
@@ -78,10 +78,10 @@ const Home = async () => {
     },
   ];
 
-  const productPrimaryList = () => {
+  const productPrimaryList = (data: any[]) => {
     const rows: ReactElement[] = [];
 
-    productsPrimary.map((product: any) => {
+    data.map((product: any) => {
       rows.push(
         <ProductPrimary
           title={product.title}
@@ -100,6 +100,7 @@ const Home = async () => {
 
   const productsSecondaryList = () => {
     const rows: ReactElement[] = [];
+
     productsSecondary.map((product: any) => {
       rows.push(
         <ProductSecondary
@@ -118,29 +119,11 @@ const Home = async () => {
     <>
       <HomeHeader />
       <main className={home.main}>
-      {bannerSlider.data.map((item: any) =>
-        <a key={item.id} href={item.url} className={home.slider} >
-          <img src={item.image} alt={item.title} />
-        </a>
-      )}
-
-      <section className={home.topBanners}>
-        <div className={home.topBanners1}>
-          <a href="#">
-            <img src="/temp/top-banner-1.jpeg" alt="" />
-          </a>
-        </div>
-        <div className={home.topBanners2}>
-          <a href="#">
-            <img src="/temp/top-banner-2.jpeg" alt="" />
-          </a>
-        </div>
-        <div className={home.topBanners3}>
-          <a href="#">
-            <img src="/temp/top-banner-3.jpeg" alt="" />
-          </a>
-        </div>
-      </section>
+      {/* {bannerSlider.data.map((item: any) => */}
+      {/*   <a key={item.id} href={item.url} className={home.slider} > */}
+      {/*     <img src={item.image} alt={item.title} /> */}
+      {/*   </a> */}
+      {/* )} */}
         <Banners />
         <section className={home.carousel}>
           <div className={home.carouselHead}>
@@ -151,7 +134,7 @@ const Home = async () => {
             </span>
             <a className={home.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList()}</div>
+          {/* <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div> */}
         </section>
         <div className={home.wideBanner}>
           <a href="#">
@@ -227,7 +210,7 @@ const Home = async () => {
             <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
             <a className={home.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList()}</div>
+          <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div>
         </section>
         <div className={home.wideBanner}>
           <a href="#">
@@ -239,7 +222,7 @@ const Home = async () => {
             <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
             <a className={home.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList()}</div>
+          <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div>
         </section>
         <Blog />
       </main>

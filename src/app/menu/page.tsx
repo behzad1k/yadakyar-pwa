@@ -1,24 +1,44 @@
+"use client"
+import restApi from '@/services/restApi';
 import menu from "@/styles/menu.module.scss";
-import icon from "@/styles/icons.module.scss";
 import Header from "@/components/header/Header";
+import { ReactElement, useEffect, useState } from 'react';
 
 const Menu = () => {
+  const [data, setData] = useState<any[]>([]);
+  const rootParent = { title: 'دسته بندی ها', id: 0, parent: -1 }
+  const [current, setCurrent] = useState(rootParent);
+
+  const list = () => {
+    const rows: ReactElement[] = [];
+
+    data.filter((e: any) => e.parent == current.id).map((menu: any, index) => rows.push(
+      <a
+        href="#"
+        onClick={() => setCurrent(menu)}
+        key={index}
+      >{menu.title}</a>
+    ));
+
+    return rows;
+  }
+
+  const fetchData = async () => {
+    const res = await restApi('http://localhost:8080/api/v1/menu').get();
+
+    setData(Object.values(res.data));
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <main className={menu.main}>
-     <Header />
+     <Header onBack={() => setCurrent(data.find((e: any) => e.id == current.parent) || rootParent)}/>
       <section className={menu.body}>
-        <span className={menu.title}>دسته بندی‌ها</span>
-        <a href="#">قطعات بدنه</a>
-        <a href="#">موتور و اگزوز</a>
-        <a href="#">فرمان،جلوبندی و ترمز</a>
-        <a href="#">رینگ و لاستیک</a>
-        <a href="#">روغن و فیلتر </a>
-        <a href="#">فرمان،جلوبندی و ترمز</a>
-        <a href="#">برقی و الکتریکی</a>
-        <a href="#">لوازم جانبی و اسپرت</a>
-        <a href="#">قطعات بدنه</a>
-        <a href="#">فرمان،جلوبندی و ترمز</a>
-        <a href="#">لوازم جانبی و اسپرت</a>
+        <span className={menu.title}>{current.title}</span>
+        {data.length > 0 && list()}
       </section>
     </main>
   );

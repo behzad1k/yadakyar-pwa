@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ReactElement } from 'react';
 
 type Popup = {
@@ -15,6 +15,12 @@ const initialState: popupState = {
   popups: []
 };
 
+
+const hide = createAsyncThunk('popups/remove', async () => {
+  return await new Promise((resolve) => setTimeout(resolve as () => void, 300));
+})
+
+
 const popupSlice = createSlice({
   name: 'popupReducer',
   initialState,
@@ -23,9 +29,28 @@ const popupSlice = createSlice({
       state.popups.push({
         content: action.payload,
         style: {
-          top: 20,
+          position: 'absolute',
+          top: 0,
+          display: 'inline-flex',
           flex: 1,
           width: '100%',
+          height: '100%',
+          backgroundColor: '#FFF',
+        },
+        visible: true,
+      });
+    },
+    middle: (state, action: PayloadAction<ReactElement>) => {
+      state.popups.push({
+        content: action.payload,
+        style: {
+          position: 'absolute',
+          top: 80,
+          flex: 1,
+          width: '100%',
+          height: '90%',
+          backgroundColor: '#FFF',
+          zIndex: 100
         },
         visible: true,
       });
@@ -67,23 +92,30 @@ const popupSlice = createSlice({
         visible: true,
       });
     },
-    hide: (state) => {
-      if (state.popups.length) {
-        state.popups[state.popups.length - 1].visible = false;
-      }
-    }
   },
+  extraReducers: (builder) => {
+    builder
+    .addCase(hide.pending, (state) => {
+      state.popups[state.popups.length - 1].visible = false;
+    })
+    .addCase(hide.fulfilled, (state) => {
+      state.popups.pop();
+    })
+  }
 });
 
 export const {
   full,
+  middle,
   top,
   left,
   bottom,
   right,
-  hide
 } = popupSlice.actions;
 
+export {
+  hide
+}
 const popupReducer = popupSlice.reducer;
 
 export default popupReducer;

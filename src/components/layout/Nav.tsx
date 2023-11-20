@@ -1,27 +1,28 @@
+"use client"
 import icon from "@/styles/icons.module.scss";
 import nav from "@/styles/nav.module.scss";
-
+import Link from 'next/link';
 
 const Nav = () => {
   return (
     <div className={nav.container}>
       <nav className={nav.main}>
-        <span>
+        <Link href="/">
           <i className={icon.homeNav} />
           خانه
-        </span>
-        <span>
+        </Link>
+        <Link href="/menu">
           <i className={icon.menuNav} />
           دسته بندی
-        </span>
-        <span>
+        </Link>
+        <Link href='/productReq'>
           <i className={icon.sparePartNav} />
           استعلام قیمت
-        </span>
-        <span>
+        </Link>
+        <Link href="/shipping">
           <i className={icon.cartNav} />
           سبد خرید
-        </span>
+        </Link>
       </nav>
     </div>
   );
