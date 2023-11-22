@@ -24,7 +24,7 @@ const Menu = () => {
   }
 
   const fetchData = async () => {
-    const res = await restApi('http://localhost:8080/api/v1/menu').get();
+    const res = await restApi('https://yadakyar.com/api/v1/menu').get();
 
     setData(Object.values(res.data));
   }

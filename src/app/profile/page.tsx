@@ -2,7 +2,7 @@
 import Header from "@/components/header/Header";
 import restApi from '@/services/restApi';
 import { useEffect } from 'react';
-import TitleHeader from "./components/TitleHeader";
+import TitleHeader from "../../components/header/TitleHeader";
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 

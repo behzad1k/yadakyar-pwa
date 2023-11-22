@@ -2,12 +2,18 @@ import category from "@/styles/category.module.scss";
 import icon from "@/styles/icons.module.scss";
 import search from "@/styles/search.module.scss";
 import helper from "@/styles/helpers.module.scss";
-import Modal from "./modal";
+import { fetchData } from "./builder";
+// import Modal from "./Modal";
 
-const Category = () => {
+const Category = async () => {
+  const res = await fetchData();
+  console.log(res);
+  const categoryTitle = res.data;
+  console.log(categoryTitle);
+
   return (
     <>
-      <section className={search.head}>
+      <section className={helper.header}>
         <i className={icon.headphone}></i>
         <form action="">
           <input type="text" placeholder="جست و جو" />
@@ -23,16 +29,16 @@ const Category = () => {
             <span>
               <i className={icon.addCar} />
               انتخاب خودرو
-              <i className={icon.chevronBot} />
+              <i className={icon.chevronDown} />
             </span>
             <span>
               <i className={icon.filter} />
               فیلترها
-              <i className={icon.chevronBot} />
+              <i className={icon.chevronDown} />
             </span>
             <span>
               قیمت
-              <i className={icon.chevronBot} />
+              <i className={icon.chevronDown} />
             </span>
           </div>
         </section>
@@ -100,7 +106,7 @@ const Category = () => {
         </section>
         <section className={category.products}>
           <div className={category.productsHead}>
-            <h1>لاستیک</h1>
+            <h1>{categoryTitle}</h1>
             <small>(۱۰۰۰+ محصول)</small>
           </div>
           <div className={category.productsHead}>
@@ -492,7 +498,7 @@ const Category = () => {
             </article>
           </a>
         </section>
-        <Modal>
+        {/* <Modal>
           <div className={category.filterModal}>
             <span>فیلتر ها</span>
             <div className={category.filterModalDropdown}>برند</div>
@@ -527,7 +533,7 @@ const Category = () => {
             </div>
             <button className={helper.wideBtn}>مشاهده نتیجه</button>
           </div>
-        </Modal>
+        </Modal> */}
       </main>
     </>
   );

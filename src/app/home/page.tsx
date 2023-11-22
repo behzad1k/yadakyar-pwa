@@ -1,8 +1,8 @@
 import { ProductPrimary } from "@/components/cards/ProductPrimary";
 import { popupSlice } from "@/services/reducers";
-import { fetchData } from '@/app/home/builder';
-import { Product } from '@/components/cards/Product';
-import globalEnum from '@/enums/globalEnum';
+import { fetchData } from "@/app/home/builder";
+import { Product } from "@/components/cards/Product";
+import globalEnum from "@/enums/globalEnum";
 import home from "@/styles/home.module.scss";
 import icon from "@/styles/icons.module.scss";
 import { useDispatch } from "react-redux";
@@ -11,49 +11,13 @@ import Blog from "./Blog";
 import ProductSecondary from "@/components/cards/ProductSecondary";
 import { ReactElement } from "react";
 import HomeHeader from "@/components/header/HomeHeader";
+import helper from "@/styles/helpers.module.scss";
 
 const Home = async () => {
   const res = await fetchData(); // 300 ms
-  // const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
 
-  const productsPrimary = [
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      img: "/temp/product-test.png",
-      price: 55000000,
-      discount: 25,
-      oldPrice: 77000000,
-      rateStar: 1,
-      reviews: 23,
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      img: "/temp/product-test.png",
-      price: 55000000,
-      discount: 25,
-      oldPrice: 77000000,
-      rateStar: 1,
-      reviews: 23,
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      img: "/temp/product-test.png",
-      price: 55000000,
-      discount: 25,
-      oldPrice: 77000000,
-      rateStar: 1,
-      reviews: 23,
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      img: "/temp/product-test.png",
-      price: 55000000,
-      discount: 25,
-      oldPrice: 77000000,
-      rateStar: 1,
-      reviews: 23,
-    },
-  ];
+  let firstCarousel = res.data.all[0]["data"];
+  console.log(firstCarousel[0].gallery["thumb"]);
 
   const productsSecondary = [
     {
@@ -78,19 +42,20 @@ const Home = async () => {
     },
   ];
 
-  const productPrimaryList = (data: any[]) => {
+  const firstCarouselList = (firstCarousel: any[]) => {
     const rows: ReactElement[] = [];
 
-    data.map((product: any) => {
+    firstCarousel.map((product: any) => {
       rows.push(
         <ProductPrimary
           title={product.title}
           price={product.price}
-          img={product.img}
+          img={product.gallery[0]}
           discount={product.discount}
           oldPrice={product.oldPrice}
           rateStar={product.rateStar}
           reviews={product.reviews}
+          url={product.url}
         />
       );
     });
@@ -107,6 +72,7 @@ const Home = async () => {
           title={product.title}
           price={product.price}
           img={product.img}
+          url={product.url}
         />
       );
     });
@@ -114,39 +80,40 @@ const Home = async () => {
     return rows;
   };
 
-
   return (
     <>
       <HomeHeader />
       <main className={home.main}>
-      {/* {bannerSlider.data.map((item: any) => */}
-      {/*   <a key={item.id} href={item.url} className={home.slider} > */}
-      {/*     <img src={item.image} alt={item.title} /> */}
-      {/*   </a> */}
-      {/* )} */}
-        <Banners />
-        <section className={home.carousel}>
-          <div className={home.carouselHead}>
-            <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
-            <span className={home.carouselTimer}>
+        {/* {bannerSlider.data.map((item: any) => */}
+        {/*   <a key={item.id} href={item.url} className={home.slider} > */}
+        {/*     <img src={item.image} alt={item.title} /> */}
+        {/*   </a> */}
+        {/* )} */}
+        <Banners data={res.data?.all} />
+        <section className={helper.carousel}>
+          <div className={helper.carouselHead}>
+            <span className={helper.carouselTitle}>تخفیف دار‌‌ها</span>
+            <span className={helper.carouselTimer}>
               ۲۳:۵۰:۰۹
               <i className={icon.timer}></i>
             </span>
-            <a className={home.carouselLink}>مشاهده همه</a>
+            <a className={helper.carouselLink}>مشاهده همه</a>
           </div>
-          {/* <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div> */}
+          <div className={helper.carouselScroll}>
+            {firstCarouselList(firstCarousel)}
+          </div>
         </section>
         <div className={home.wideBanner}>
           <a href="#">
             <img src="/temp/wide-banner.png" alt="" />
           </a>
         </div>
-        <section className={home.carousel}>
-          <div className={home.carouselHead}>
-            <span className={home.carouselTitle}>لاستیک</span>
-            <a className={home.carouselLink}>مشاهده همه</a>
+        <section className={helper.carousel}>
+          <div className={helper.carouselHead}>
+            <span className={helper.carouselTitle}>لاستیک</span>
+            <a className={helper.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productsSecondaryList()}</div>
+          <div className={helper.carouselScroll}>{productsSecondaryList()}</div>
         </section>
         <section className={home.shortcuts}>
           <div className={home.shortcutsPartReq}>
@@ -205,24 +172,24 @@ const Home = async () => {
             </div>
           </a>
         </section>
-        <section className={home.carousel}>
-          <div className={home.carouselHead}>
-            <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
-            <a className={home.carouselLink}>مشاهده همه</a>
+        <section className={helper.carousel}>
+          <div className={helper.carouselHead}>
+            <span className={helper.carouselTitle}>تخفیف دار‌‌ها</span>
+            <a className={helper.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div>
+          <div className={helper.carouselScroll}></div>
         </section>
         <div className={home.wideBanner}>
           <a href="#">
             <img src="/temp/wide-banner.png" alt="" />
           </a>
         </div>
-        <section className={home.carousel}>
-          <div className={home.carouselHead}>
-            <span className={home.carouselTitle}>تخفیف دار‌‌ها</span>
-            <a className={home.carouselLink}>مشاهده همه</a>
+        <section className={helper.carousel}>
+          <div className={helper.carouselHead}>
+            <span className={helper.carouselTitle}>تخفیف دار‌‌ها</span>
+            <a className={helper.carouselLink}>مشاهده همه</a>
           </div>
-          <div className={home.carouselScroll}>{productPrimaryList(productsPrimary)}</div>
+          <div className={helper.carouselScroll}></div>
         </section>
         <Blog />
       </main>

@@ -1,4 +1,4 @@
-import TitleHeader from "@/app/profile/components/TitleHeader";
+import TitleHeader from "@/components/header/TitleHeader";
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 import helper from "@/styles/helpers.module.scss";

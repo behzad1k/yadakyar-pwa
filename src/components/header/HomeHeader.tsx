@@ -25,7 +25,7 @@ const HomeHeader = () => {
           ماشینت چیه؟
           <small> | انتخاب کن</small>
         </span>
-        <i className={icon.chevronBotWhite} />
+        <i className={icon.chevronDownWhite} />
       </div>
     </header>
   );
