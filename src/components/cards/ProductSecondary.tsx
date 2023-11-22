@@ -4,14 +4,15 @@ const ProductSecondary = ({
   title,
   price,
   img,
+  url,
 }: {
   title: string;
   price: number;
   img: string;
+  url: string;
 }) => {
-
   return (
-    <a href="#">
+    <a href={url}>
       <article className={home.productSML}>
         <div className={home.productImg}>
           <img src={img} alt="" />

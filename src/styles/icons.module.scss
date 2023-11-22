@@ -38,11 +38,11 @@
   content: url('/svg/add-car.svg');
 }
 
-.chevronBot {
+.chevronDown {
   content: url('/svg/chevron-bottom.svg');
 }
 
-.chevronBotWhite {
+.chevronDownWhite {
   content: url('/svg/chevron-bottom-white.svg');
 }
 
@@ -261,6 +261,28 @@
   content: url("/svg/copy.svg");
 }
 
-.info{
+.info {
   content: url("/svg/info.svg");
+}
+
+.like {
+  content: url("/svg/like.svg");
+}
+
+.likeActive {
+  content: url("/svg/like-active.svg");
+}
+
+.disLike {
+  content: url("/svg/like.svg");
+  transform: scaleY(-1);
+}
+
+.disLikeActive {
+  content: url("/svg/like-active.svg");
+  transform: scaleY(-1);
+}
+
+.rateStar {
+  content: url("/svg/star.svg");
 }

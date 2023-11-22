@@ -2,7 +2,7 @@
 import Search from '@/components/layout/Search';
 import { popupSlice } from '@/services/reducers';
 import restApi from '@/services/restApi';
-import header from "@/styles/header.module.scss";
+import helper from "@/styles/helpers.module.scss";
 import icon from "@/styles/icons.module.scss";
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -19,7 +19,7 @@ const Header = ({ onBack, query, setQuery }: any) => {
   }, []);
 
   return (
-    <header className={header.head}>
+    <header className={helper.header}>
       <i className={icon.headphone}></i>
       <form action="">
         <input

@@ -1,4 +1,3 @@
-"use client";
 import { popupSlice } from "@/services/reducers";
 import home from "@/styles/home.module.scss";
 import { useDispatch } from "react-redux";
@@ -9,6 +8,7 @@ export const ProductPrimary = ({
   img,
   discount,
   oldPrice,
+  url,
   rateStar,
   reviews,
 }: {
@@ -17,12 +17,15 @@ export const ProductPrimary = ({
   img:string;
   discount: number;
   oldPrice: number;
+  url:string
   rateStar: number;
   reviews: number;
 }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
-    <a onClick={() => dispatch(popupSlice.left(<p>hi</p>))}>
+    <a href={url}
+      // onClick={() => dispatch(popupSlice.left(<p>hi</p>))}
+                     >
       <article className={home.product}>
         <div className={home.productImg}>
           <img src={img} alt="" />
