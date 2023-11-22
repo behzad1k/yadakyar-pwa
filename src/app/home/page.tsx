@@ -15,7 +15,6 @@ import HomeHeader from "@/components/header/HomeHeader";
 const Home = async () => {
   const res = await fetchData(); // 300 ms
   // const bannerSlider = res.data.all.filter((item: any) => item.type == globalEnum.MediaType.bannerSlider);
-
   const productsPrimary = [
     {
       title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
@@ -117,7 +116,6 @@ const Home = async () => {
 
   return (
     <>
-      <HomeHeader />
       <main className={home.main}>
       {/* {bannerSlider.data.map((item: any) => */}
       {/*   <a key={item.id} href={item.url} className={home.slider} > */}

@@ -1,11 +1,15 @@
 import popupReducer from '@/services/reducers/popupSlice';
+import homeReducer from '@/services/reducers/homeSlice';
+import userReducer from '@/services/reducers/userSlice';
 import { AnyAction, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { combineReducers } from 'redux';
 import thunk, { ThunkDispatch } from 'redux-thunk';
 
 const rootReducer = combineReducers({
-  popupReducer
+  popupReducer,
+  homeReducer,
+  userReducer,
 });
 
 const store = configureStore({

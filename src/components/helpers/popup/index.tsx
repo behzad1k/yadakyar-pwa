@@ -10,7 +10,7 @@ const Popup = () => {
 
     popupReducer.popups.forEach((item, index) => {
       rows.push(
-        <div style={{ ...item.style,display: item.visible ? 'inline-flex' : 'none'}}>
+        <div style={{ ...item.style,display: item.visible ? 'inline-block' : 'none'}}>
           {item.content}
         </div>
       )

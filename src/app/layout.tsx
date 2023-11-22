@@ -1,9 +1,12 @@
-import Popup from '@/components/popup';
+import { Loading } from '@/components/helpers/loading';
+import Popup from '../components/helpers/popup';
 import Providers from '@/services/Providers';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.scss'
-import '@/app/fonts.scss'
+import '../styles/globals.scss'
+import '@/styles/fonts.scss'
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,8 +24,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <Providers>
+        <ToastContainer
+          progressStyle={{
+            background:
+              'linear-gradient( to right, rgb(255, 177, 177), rgb(255, 60, 60))',
+          }}
+          style={{marginTop: '50px', padding: '20px', right: 0, fontFamily: "Yekan Bakh"}}
+        />
         {children}
         <Popup />
+        <Loading />
       </Providers>
       </body>
     </html>

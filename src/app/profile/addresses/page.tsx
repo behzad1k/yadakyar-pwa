@@ -1,13 +1,17 @@
+"use client"
 import TitleHeader from "@/app/profile/components/TitleHeader";
+import { useAppSelector } from '@/services/store';
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 import helper from "@/styles/helpers.module.scss";
-
+import { useEffect, useState } from 'react';
 
 const Addresses = () => {
+  const addressReducer = useAppSelector(state => state.userReducer.addresses);
+
   return (
     <>
-      <TitleHeader/>
+      <TitleHeader titile='آدرس ها'/>
       <main className={profile.body}>
         <input className={profile.addressSearch} type="text" placeholder="جست و جو آدرس"/>
         <span className={helper.wideBtn}>

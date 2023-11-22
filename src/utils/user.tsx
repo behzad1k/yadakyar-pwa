@@ -1,10 +1,9 @@
-let loggedIn = false;
+import Cookies from 'js-cookie';
 
-const isLogin = () => {
-  return loggedIn;
+const isLoggedIn = () => {
+  return Cookies.get('token') != undefined
 }
 
-const setLoggedIn = (value: boolean) => {
-  loggedIn = value
+export {
+  isLoggedIn,
 }
-

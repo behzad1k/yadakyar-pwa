@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <div className={nav.container}>
       <nav className={nav.main}>
-        <Link href="/">
+        <Link href="/home">
           <i className={icon.homeNav} />
           خانه
         </Link>

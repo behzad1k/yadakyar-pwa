@@ -1,5 +1,5 @@
 "use client"
-import Search from '@/components/layout/Search/Search';
+import Search from '@/components/layout/Search';
 import { popupSlice } from '@/services/reducers';
 import restApi from '@/services/restApi';
 import header from "@/styles/header.module.scss";

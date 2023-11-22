@@ -31,7 +31,6 @@ const popupSlice = createSlice({
         style: {
           position: 'absolute',
           top: 0,
-          display: 'inline-flex',
           flex: 1,
           width: '100%',
           height: '100%',
@@ -77,6 +76,7 @@ const popupSlice = createSlice({
       state.popups.push({
         content: action.payload,
         style: {
+          position: 'absolute',
           bottom: 0,
           width: '100%',
           borderTopRightRadius: 20,

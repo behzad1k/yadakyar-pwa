@@ -1,19 +1,30 @@
+"use client"
+import Login from '@/components/layout/login';
+import { popupSlice } from '@/services/reducers';
 import icon from "@/styles/icons.module.scss";
 import homeHeader from "@/styles/homeHeader.module.scss";
+import { isLoggedIn } from '@/utils/user';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
 
 const HomeHeader = () => {
-  return (
+  const dispatch = useDispatch();
 
+  return (
     <header className={homeHeader.main}>
       <div className={homeHeader.icons}>
         <i className={icon.headphone} />
         <div className={homeHeader.logo}>
           <img src="/logo-white.png" alt="" />
         </div>
-        {<Link href="/profile">
+        <Link href="/profile" onClick={(event: any) => {
+          if (!isLoggedIn()) {
+            event.preventDefault();
+            dispatch(popupSlice.bottom(<Login />));
+          }
+        }} >
           <i className={icon.profile}/>
-        </Link>}
+        </Link>
       </div>
       <div className={homeHeader.search}>
         <form action="">

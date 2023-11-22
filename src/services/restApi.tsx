@@ -1,15 +1,18 @@
+import Cookies from 'js-cookie';
+
 const apiRequest = async (url: string, useAccessToken = false, method: string, body: any, headers: any) => {
   if (!headers['content-type']) {
     headers['content-type'] = 'application/json';
   }
 
   if (useAccessToken) {
-    // headers.accessToken = await AsyncStorage.getItem(generalEnum.Tokens.access) || '';
+    headers['app-token'] = Cookies.get('token') || '';
   }
 
   if (headers['content-type'] === 'application/json' && body) {
     body = JSON.stringify(body);
   }
+
   return await fetch(url, {
     method: method,
     headers: headers,
