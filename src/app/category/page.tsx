@@ -1,15 +1,108 @@
+// "use client"
 import category from "@/styles/category.module.scss";
 import icon from "@/styles/icons.module.scss";
 import search from "@/styles/search.module.scss";
 import helper from "@/styles/helpers.module.scss";
 import { fetchData } from "./builder";
+import { title } from "process";
+import { ReactElement } from "react";
+import { ProductPrimary } from "@/components/cards/ProductPrimary";
+import Filters from "./components/Filters";
+import { popupSlice } from "@/services/reducers";
+import { useDispatch } from "react-redux";
 // import Modal from "./Modal";
 
 const Category = async () => {
-  const res = await fetchData();
-  console.log(res);
-  const categoryTitle = res.data;
-  console.log(categoryTitle);
+  const dispatch: any = useDispatch();
+  // const res = await fetchData();
+  // console.log(res);
+  // const categoryTitle = res.data;
+  // console.log(categoryTitle);
+
+  const products = [
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+    {
+      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
+      price: 23200000,
+      img: "/temp/product-test.png",
+      discount: 30,
+      oldPrice: 2320000,
+      url: "",
+    },
+  ];
+
+  const productList = () => {
+    const rows: ReactElement[] = [];
+    products.map((product) => {
+      <ProductPrimary
+        title={product.title}
+        price={product.price}
+        img={product.img}
+        discount={product.discount}
+        oldPrice={product.oldPrice}
+        url={product.url}
+        // rateStar={product.rateStar}
+        // reviews={product.reviews}
+      />;
+    });
+    return rows;
+  };
+
 
   return (
     <>
@@ -31,7 +124,11 @@ const Category = async () => {
               انتخاب خودرو
               <i className={icon.chevronDown} />
             </span>
-            <span>
+            <span
+              onClick={() => {
+                dispatch(popupSlice.full(<Filters />));
+              }}
+            >
               <i className={icon.filter} />
               فیلترها
               <i className={icon.chevronDown} />
@@ -106,398 +203,16 @@ const Category = async () => {
         </section>
         <section className={category.products}>
           <div className={category.productsHead}>
-            <h1>{categoryTitle}</h1>
+            {/* <h1>{categoryTitle}</h1> */}
             <small>(۱۰۰۰+ محصول)</small>
           </div>
           <div className={category.productsHead}>
             <span>فقط کالاهای موجود</span>
             <i className={icon.switchOff} />
           </div>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
-          <a href="#">
-            <article className={category.product}>
-              <div className={category.productImg}>
-                <img src="/temp/product-test.png" alt="" />
-              </div>
-              <h2 className={category.productTitle}>
-                لاستیک 195.65.15 یزد تایر گل مرکو fh
-              </h2>
-              <span className={category.productPrice}>۲۳,۲۰۰,۰۰۰ تومان</span>
-              <s className={category.productOldPrice}>۲۳,۲۰۰,۰۰۰ تومان</s>
-              <span className={category.productDiscountPercent}>٪۳۰</span>
-              <div>
-                <span className={category.productTag}>ارسال فوری</span>
-              </div>
-            </article>
-          </a>
+          {productList()}
         </section>
+        <Filters />
         {/* <Modal>
           <div className={category.filterModal}>
             <span>فیلتر ها</span>
@@ -506,8 +221,8 @@ const Category = async () => {
             <div className={category.filterModalDropdown}>جهت</div>
             <button className={helper.wideBtn}>مشاهده نتیجه</button>
           </div>
-        </Modal>
-        <Modal>
+        </Modal> */}
+        {/* <Modal>
           <div className={category.filterModal}>
             <span>انتخاب برند</span>
             <input type="text" placeholder="جست و جو" name="" id="" />

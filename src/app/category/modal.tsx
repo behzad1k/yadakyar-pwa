@@ -5,16 +5,6 @@ import helper from "@/styles/helpers.module.scss";
 
 const Modal = ({ children }: any) => {
   return (
-    // <div className={modal.overlay}>
-    //   <div className={modal.main}>
-    //     <div className={modal.head}>
-    //       <span>
-    //         <i className={icon.close} />
-    //       </span>
-    //     </div>
-    //     {children}
-    //   </div>
-    // </div>
     <div className={category.filterModal}>
       <span>فیلتر ها</span>
       <div className={category.filterModalDropdown}>برند</div>
