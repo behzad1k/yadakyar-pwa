@@ -36,7 +36,7 @@ const Product = async () => {
     return rows;
   };
 
-  const productPrice = res.data.chunk[0].price
+  const productPrice = res.data.chunk[0].price;
 
   return (
     <main className={product.main}>

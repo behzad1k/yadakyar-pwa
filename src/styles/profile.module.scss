@@ -7,6 +7,7 @@
   flex-direction: column;
   padding: 40px 16px;
   gap: 16px;
+  padding-bottom: 110px;
 }
 
 .detail {
@@ -221,7 +222,8 @@
     height: 16px;
     position: absolute;
     top: 16px;
-    left: 10px;;
+    left: 10px;
+    ;
   }
 
   &Detail {
@@ -266,13 +268,22 @@
   }
 }
 
+.newAddressInputRow {
+  display: flex;
+  gap: 16px;
+
+  .newAddressInput {
+    width: calc(50% - 16px);
+  }
+}
 
 .newAddressInput {
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  input {
+  input,
+  textarea {
     padding: 10px 16px;
     border-radius: 8px;
     border: 1px solid #E7E6E5;

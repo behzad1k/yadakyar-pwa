@@ -82,7 +82,7 @@ const Home = async () => {
 
   return (
     <>
-      <HomeHeader />
+      {/* <HomeHeader /> */}
       <main className={home.main}>
         {/* {bannerSlider.data.map((item: any) => */}
         {/*   <a key={item.id} href={item.url} className={home.slider} > */}

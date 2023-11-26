@@ -16,6 +16,13 @@
   }
 }
 
+.body {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
 .progressBar {
   display: flex;
   flex-direction: column;
@@ -65,7 +72,7 @@
   padding: 16px 8px;
   gap: 8px;
 
-  > strong {
+  >strong {
     color: #000;
     padding-right: 8px;
     font-size: 16px;
@@ -85,7 +92,7 @@
       display: none;
     }
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -157,7 +164,7 @@
   flex-wrap: wrap;
   justify-content: center;
 
-  > div {
+  >div {
     display: flex;
     position: relative;
     border-radius: 8px;
@@ -234,6 +241,7 @@
   background: #F5F6F6;
   margin: 16px;
   overflow: hidden;
+  margin: 0 16px;
 
   strong {
     color: #000;
@@ -271,7 +279,7 @@
   padding: 16px;
   border-radius: 8px;
   background: #F0F5FE;
-  margin: 16px;
+  margin: 0 16px;
   overflow: hidden;
   display: flex;
   gap: 8px;
@@ -345,4 +353,110 @@
       }
     }
   }
+}
+
+.paymentMethodCarousel {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: auto;
+  padding: 0 16px;
+  gap: 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.fixBtnBackground {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 96px;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #E7E6E5;
+
+  .submitBtn {
+    color: #FFF;
+    font-family: Yekan Bakh;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.28px;
+    padding: 14px;
+    border-radius: 32px;
+    background: #E84D0F;
+    border: none;
+    width: 182px;
+  }
+
+  .fixedPriceBox {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+
+    small {
+      color: #6A7798;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    span {
+      color: #00142A;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+    }
+  }
+}
+
+.finalMessage {
+  background-color: #E84D0F;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  button {
+    border-radius: 33px;
+    border: none;
+    padding: 13px;
+    color: #E84D0F;
+    background-color: #fff;
+    font-family: Yekan Bakh;
+    letter-spacing: 0.756px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
 }

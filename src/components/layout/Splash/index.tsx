@@ -16,7 +16,7 @@ const Splash = () => {
     if (Cookies.get('token')) {
       dispatch(setLoading(true));
 
-      const res = await restApi('http://localhost:8080/api/v1/profile', true).get();
+      const res = await restApi('https://yadakyar.com/api/v1/profile/', true).get();
 
       if (!tools.isEmpty(res) && !res.error) {
         dispatch(profile());

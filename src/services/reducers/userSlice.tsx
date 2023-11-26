@@ -15,15 +15,15 @@ const initialState: userState = {
 };
 
 const profile = createAsyncThunk('profile/fetch', async () => {
-  return await restApi('http://localhost:8080/api/v1/profile', true).get();
+  return await restApi('https://yadakyar.com/api/v1/profile/', true).get();
 });
 
 const addresses = createAsyncThunk('addresses/fetch', async () => {
-  return await restApi('http://localhost:8080/api/v1/profile/address', true).get();
+  return await restApi('https://yadakyar.com/api/v1/profile/address/', true).get();
 })
 
 const favorites = createAsyncThunk('favorites/fetch', async () => {
-  return await restApi('http://localhost:8080/api/v1/profile/favorite', true).get();
+  return await restApi('https://yadakyar.com/api/v1/profile/favorite/', true).get();
 })
 
 const userSlice = createSlice({
