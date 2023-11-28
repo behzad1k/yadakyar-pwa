@@ -2,20 +2,21 @@
 import restApi from '@/services/restApi';
 import menu from "@/styles/menu.module.scss";
 import Header from "@/components/header/Header";
+import { useRouter } from 'next/navigation';
 import { ReactElement, useEffect, useState } from 'react';
 
 const Menu = () => {
   const [data, setData] = useState<any[]>([]);
   const rootParent = { title: 'دسته بندی ها', id: 0, parent: -1 }
   const [current, setCurrent] = useState(rootParent);
-
+  const router = useRouter();
+  
   const list = () => {
     const rows: ReactElement[] = [];
 
     data.filter((e: any) => e.parent == current.id).map((menu: any, index) => rows.push(
       <a
-        href="#"
-        onClick={() => setCurrent(menu)}
+        onClick={() => data.filter((e: any) => e.parent == menu.id).length > 0 ? setCurrent(menu) : router.push(`/category/${menu.id}`)}
         key={index}
       >{menu.title}</a>
     ));

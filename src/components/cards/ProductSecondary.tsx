@@ -1,18 +1,21 @@
 import home from "@/styles/home.module.scss";
+import Link from 'next/link';
 
 const ProductSecondary = ({
   title,
   price,
   img,
   url,
+  id
 }: {
   title: string;
   price: number;
   img: string;
   url: string;
+  id: number;
 }) => {
   return (
-    <a href={url}>
+    <Link href={`/product/${id}`} >
       <article className={home.productSML}>
         <div className={home.productImg}>
           <img src={img} alt="" />
@@ -22,7 +25,7 @@ const ProductSecondary = ({
           <span className={home.productPrice}>{price} تومان</span>
         </div>
       </article>
-    </a>
+    </Link>
   );
 };
 

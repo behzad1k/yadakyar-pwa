@@ -1,8 +1,12 @@
 import Cookies from 'js-cookie';
 
-const apiRequest = async (url: string, useAccessToken = false, method: string, body: any, headers: any) => {
+const apiRequest = async (url: string, useAccessToken = false, useOrderToken = false, method: string, body: any, headers: any) => {
   if (!headers['content-type']) {
     headers['content-type'] = 'application/json';
+  }
+
+  if (useOrderToken) {
+    headers['order-token'] = Cookies.get('orderToken') || '';
   }
 
   if (useAccessToken) {
@@ -22,38 +26,38 @@ const apiRequest = async (url: string, useAccessToken = false, method: string, b
       return await response.json();
     })
     .catch(error => {
-      console.log('Fetch error', error);
+      
       return {};
     });
 };
-// headers.refreshToken = await getToken(generalEnum.Tokens.refresh) || ''
-const restApi = (url: string, useAccessToken = false) => {
+
+const restApi = (url: string, useAccessToken = false, useOrderToken = false) => {
   const get = (query: any = {}, headers = {}) => {
     if (query !== '{}') {
       Object.entries(query).map(([key, value], index) => {
         url += (index == 0 ? '?' : '&') + key + '=' + value;
       });
     }
-    return apiRequest(url, useAccessToken, 'get', {}, headers);
+    return apiRequest(url, useAccessToken, useOrderToken, 'get', {}, headers);
   }
 
   const post = (body: any, headers = {}) => {
-    return apiRequest(url, useAccessToken, 'post', body, headers);
+    return apiRequest(url, useAccessToken, useOrderToken, 'post', body, headers);
   }
 
   const put = (body: any, headers = {}) => {
-    return apiRequest(url, useAccessToken, 'put', body, headers);
+    return apiRequest(url, useAccessToken, useOrderToken, 'put', body, headers);
   }
 
   const del = (body: any, headers = {}) => {
-    return apiRequest(url, useAccessToken, 'delete', body, headers);
+    return apiRequest(url, useAccessToken, useOrderToken, 'delete', body, headers);
   }
 
   const upload = async (body: {} = {}, headers = {}) => {
       // @ts-ignore
       headers['content-type'] = 'form-data';
 
-    return apiRequest(url, useAccessToken, 'post', body, headers);
+    return apiRequest(url, useAccessToken, useOrderToken, 'post', body, headers);
   }
 
   return {

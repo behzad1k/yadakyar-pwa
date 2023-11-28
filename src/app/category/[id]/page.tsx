@@ -1,105 +1,35 @@
-// "use client"
-import category from "@/styles/category.module.scss";
 import icon from "@/styles/icons.module.scss";
-import search from "@/styles/search.module.scss";
+import category from "@/styles/category.module.scss";
 import helper from "@/styles/helpers.module.scss";
 import { fetchData } from "./builder";
-import { title } from "process";
 import { ReactElement } from "react";
 import { ProductPrimary } from "@/components/cards/ProductPrimary";
-import Filters from "./components/Filters";
-import { popupSlice } from "@/services/reducers";
-import { useDispatch } from "react-redux";
+import Filters from "@/app/category/[id]/components/Filters";
 // import Modal from "./Modal";
 
-const Category = async () => {
-  const dispatch: any = useDispatch();
-  // const res = await fetchData();
-  // console.log(res);
-  // const categoryTitle = res.data;
-  // console.log(categoryTitle);
-
-  const products = [
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-    {
-      title: "لاستیک 195.65.15 یزد تایر گل مرکو fh",
-      price: 23200000,
-      img: "/temp/product-test.png",
-      discount: 30,
-      oldPrice: 2320000,
-      url: "",
-    },
-  ];
-
+const Category = async ({ params, searchParams }: any) => {
+  let pathname = '?';
+  Object.entries(searchParams).forEach(([key, value], index) => pathname += key + '=' + value)
+  const res = await fetchData(pathname?.split('?')[1] || '', params.id);
+  const cat = res.data;
+  
   const productList = () => {
     const rows: ReactElement[] = [];
-    products.map((product) => {
-      <ProductPrimary
-        title={product.title}
-        price={product.price}
-        img={product.img}
-        discount={product.discount}
-        oldPrice={product.oldPrice}
-        url={product.url}
-        // rateStar={product.rateStar}
-        // reviews={product.reviews}
-      />;
-    });
+
+    cat.products.slice(0, 10).map((product, index) =>
+      rows.push(
+        <ProductPrimary
+          key={index}
+          title={product.title}
+          price={product.price}
+          img={product.gallery[0]?.original}
+          discount={product.discount}
+          oldPrice={product.oldPrice}
+          id={product.id}
+        />
+      )
+    );
+
     return rows;
   };
 
@@ -118,26 +48,8 @@ const Category = async () => {
           <div className={category.headBanner}>
             <img src="/temp/categorybannertemp.png" alt="" />
           </div>
-          <div className={category.filters}>
-            <span>
-              <i className={icon.addCar} />
-              انتخاب خودرو
-              <i className={icon.chevronDown} />
-            </span>
-            <span
-              onClick={() => {
-                dispatch(popupSlice.full(<Filters />));
-              }}
-            >
-              <i className={icon.filter} />
-              فیلترها
-              <i className={icon.chevronDown} />
-            </span>
-            <span>
-              قیمت
-              <i className={icon.chevronDown} />
-            </span>
-          </div>
+          <Filters/>
+
         </section>
         <section className={category.shortcuts}>
           <div className={category.shortcutsCard}>
@@ -212,16 +124,8 @@ const Category = async () => {
           </div>
           {productList()}
         </section>
-        <Filters />
         {/* <Modal>
-          <div className={category.filterModal}>
-            <span>فیلتر ها</span>
-            <div className={category.filterModalDropdown}>برند</div>
-            <div className={category.filterModalDropdown}>ارتفاع</div>
-            <div className={category.filterModalDropdown}>جهت</div>
-            <button className={helper.wideBtn}>مشاهده نتیجه</button>
-          </div>
-        </Modal> */}
+
         {/* <Modal>
           <div className={category.filterModal}>
             <span>انتخاب برند</span>

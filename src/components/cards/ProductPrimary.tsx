@@ -1,6 +1,6 @@
 import { popupSlice } from "@/services/reducers";
 import home from "@/styles/home.module.scss";
-import { useDispatch } from "react-redux";
+import Link from 'next/link';
 
 export const ProductPrimary = ({
   title,
@@ -8,24 +8,17 @@ export const ProductPrimary = ({
   img,
   discount,
   oldPrice,
-  url,
-  rateStar,
-  reviews,
+  id
 }: {
   title: string;
   price: number;
   img:string;
   discount: number;
   oldPrice: number;
-  url:string
-  rateStar: number;
-  reviews: number;
+  id: number;
 }) => {
-  // const dispatch = useDispatch();
   return (
-    <a href={url}
-      // onClick={() => dispatch(popupSlice.left(<p>hi</p>))}
-                     >
+    <Link href={`/product/${id}`} >
       <article className={home.product}>
         <div className={home.productImg}>
           <img src={img} alt="" />
@@ -38,6 +31,6 @@ export const ProductPrimary = ({
           <span className={home.productTag}>ارسال فوری</span>
         </div>
       </article>
-    </a>
+    </Link>
   );
 };

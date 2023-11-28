@@ -27,7 +27,7 @@ const Login = () => {
       toast("کد با موفقیت برای شما ارسال شد.", { type: "success" });
     } else {
       toast("خطایی رخ داده است. لطفا مجددا تلاش کنید.", { type: "success" });
-      console.log(res);
+      
     }
 
     dispatch(homeSlice.setLoading(false));
@@ -48,7 +48,7 @@ const Login = () => {
       handleStep();
     } else {
       toast("خطایی رخ داده است. لطفا مجددا تلاش کنید.", { type: "success" });
-      console.log(res);
+      
     }
 
     dispatch(homeSlice.setLoading(false));

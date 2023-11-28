@@ -23,10 +23,6 @@ const MethodCard = ({
   useEffect(() => {
     setIsSelected(methodSelected);
   }, [methodSelected]);
-  console.log(onClick);
-  
-
-
 
   return (
     <div

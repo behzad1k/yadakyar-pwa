@@ -1,23 +1,25 @@
+import Form from '@/app/product/components/Form';
+import Back from '@/components/helpers/back';
 import product from "@/styles/product.module.scss";
 import icon from "@/styles/icons.module.scss";
 import helper from "@/styles/helpers.module.scss";
-import { fetchData } from "@/app/product/builder";
-import { log } from "console";
+import { fetchData } from "@/app/product/[id]/builder";
 import ProductSecondary from "@/components/cards/ProductSecondary";
 import { ReactElement } from "react";
 
-const Product = async () => {
-  const res = await fetchData();
+const Product = async ({ params }: { params: { id: number } }) => {
+  const res = await fetchData(params.id);
 
   let productTitle = null;
   if (res.data.content.title) {
     productTitle = res.data.content.title;
   }
 
+  const prod = res.data;
+
   // let productColor = [res.data.options[0]];
   let productDesc = res.data.content.htmlText;
   let relatedProducts = res.data.related;
-  console.log(relatedProducts);
 
   const relatedProductsList = (relatedProducts: any[]) => {
     const rows: ReactElement[] = [];
@@ -29,6 +31,7 @@ const Product = async () => {
           price={product.chunk[0].price}
           img={product.image}
           url={product.url}
+          id={product.id}
         />
       );
     });
@@ -40,36 +43,15 @@ const Product = async () => {
 
   return (
     <main className={product.main}>
+      {/* todo: header */}
+      <Back>back</Back>
       <section className={product.info}>
         <h1>{productTitle}</h1>
         <div>
-          <img src="/temp/product-temp.png" alt="" />
+          <img src={prod.content.gallery[0]?.original} alt="" />
         </div>
         <small>سیستم صوتی / باند و بلندگو</small>
-        <div className={product.infoColor}>
-          <span>رنگ:</span>
-          <span>نقره ای مات (ساتن)</span>
-          <label className={product.infoColorSelected}>
-            <input type="radio" />
-          </label>
-          <label>
-            <input type="radio" />
-          </label>
-          <label>
-            <input type="radio" />
-          </label>
-          <label>
-            <input type="radio" />
-          </label>
-        </div>
-        <div className={product.infoAttribute}>
-          <span>سایز:</span>
-          <label className={product.infoAttributeSelected}>۱۲ سانتی متر</label>
-          <label>۱۲ سانتی متر</label>
-          <label>۱۲ سانتی متر</label>
-          <label>۱۲ سانتی متر</label>
-          <label>۱۲ سانتی متر</label>
-        </div>
+        <Form product={{ ...prod, id: params.id }} chunk={prod.chunk}/>
         <div className={helper.dropdown}>
           <input type="checkbox" id="dropdownInput1" />
           <label htmlFor="dropdownInput1">
@@ -214,14 +196,6 @@ const Product = async () => {
           </article>
         </div>
       </section>
-
-      <div className={product.fixBtnBackground}>
-        <button className={product.addToCartBtn}>افزودن به سبد خرید</button>
-        <div className={product.priceBox}>
-          <span>{productPrice} تومان</span>
-          <s>۲۳,۲۰۰,۰۰۰ تومان</s>
-        </div>
-      </div>
     </main>
   );
 };

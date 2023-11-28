@@ -55,7 +55,7 @@ const NewAddress = () => {
     fetchData();
   }, []);
 
-  console.log(provinces);
+  
 
   const provincesList = () => {
     const rows: ReactElement[] = [];
@@ -182,7 +182,7 @@ const NewAddress = () => {
             />
           </div>
         </div>
-        <button className={helper.wideBtn}>ثبت آدرس</button>
+        <button className={helper.wideBtn} onClick={send}>ثبت آدرس</button>
       </main>
     </>
   );

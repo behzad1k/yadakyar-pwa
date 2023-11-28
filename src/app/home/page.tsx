@@ -17,7 +17,6 @@ const Home = async () => {
   const res = await fetchData(); // 300 ms
 
   let firstCarousel = res.data.all[0]["data"];
-  console.log(firstCarousel[0].gallery["thumb"]);
 
   const productsSecondary = [
     {
@@ -50,12 +49,10 @@ const Home = async () => {
         <ProductPrimary
           title={product.title}
           price={product.price}
-          img={product.gallery[0]}
+          img={product.img}
           discount={product.discount}
           oldPrice={product.oldPrice}
-          rateStar={product.rateStar}
-          reviews={product.reviews}
-          url={product.url}
+          id={product.id}
         />
       );
     });
@@ -72,6 +69,7 @@ const Home = async () => {
           title={product.title}
           price={product.price}
           img={product.img}
+          id={product.id}
           url={product.url}
         />
       );

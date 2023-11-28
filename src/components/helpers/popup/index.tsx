@@ -30,7 +30,7 @@ const Popup = () => {
       document.body.classList.remove('onPopup');
     }
   }, [popupReducer.popups.length]);
-console.log(popupReducer.popups.length);
+
 
   return (
     <>
