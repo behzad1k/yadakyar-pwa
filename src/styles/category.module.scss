@@ -111,7 +111,7 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
-    width: 165px;
+    width: 165px !important;
     height: 298px;
     padding: 10px;
     border: 1px solid #E7E6E5;
@@ -180,5 +180,3 @@
 
   }
 }
-
-

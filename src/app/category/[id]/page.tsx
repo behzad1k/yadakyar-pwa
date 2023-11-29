@@ -3,8 +3,8 @@ import category from "@/styles/category.module.scss";
 import helper from "@/styles/helpers.module.scss";
 import { fetchData } from "./builder";
 import { ReactElement } from "react";
-import { ProductPrimary } from "@/components/cards/ProductPrimary";
 import Filters from "@/app/category/[id]/components/Filters";
+import { ProductCard } from "./components/ProductCard";
 // import Modal from "./Modal";
 
 const Category = async ({ params, searchParams }: any) => {
@@ -18,7 +18,7 @@ const Category = async ({ params, searchParams }: any) => {
 
     cat.products.slice(0, 10).map((product, index) =>
       rows.push(
-        <ProductPrimary
+        <ProductCard
           key={index}
           title={product.title}
           price={product.price}
@@ -46,7 +46,7 @@ const Category = async ({ params, searchParams }: any) => {
       <main className={category.main}>
         <section className={category.head}>
           <div className={category.headBanner}>
-            <img src="/temp/categorybannertemp.png" alt="" />
+            <img src={cat.category.image} alt="" />
           </div>
           <Filters/>
 

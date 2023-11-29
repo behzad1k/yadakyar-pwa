@@ -1,5 +1,5 @@
-import Form from '@/app/product/components/Form';
-import Back from '@/components/helpers/back';
+import Form from "@/app/product/components/Form";
+import Back from "@/components/helpers/back";
 import product from "@/styles/product.module.scss";
 import icon from "@/styles/icons.module.scss";
 import helper from "@/styles/helpers.module.scss";
@@ -9,17 +9,17 @@ import { ReactElement } from "react";
 
 const Product = async ({ params }: { params: { id: number } }) => {
   const res = await fetchData(params.id);
-
-  let productTitle = null;
-  if (res.data.content.title) {
-    productTitle = res.data.content.title;
-  }
-
   const prod = res.data;
 
-  // let productColor = [res.data.options[0]];
-  let productDesc = res.data.content.htmlText;
-  let relatedProducts = res.data.related;
+  let productTitle = null;
+  if (prod.content.title) {
+    productTitle = prod.content.title;
+  }
+  const breadCrumbs = prod.breadCrumbs;
+
+  // let productColor = [prod.options[0]];
+  const productDesc = prod.content.htmlText;
+  const relatedProducts = prod.related;
 
   const relatedProductsList = (relatedProducts: any[]) => {
     const rows: ReactElement[] = [];
@@ -44,39 +44,32 @@ const Product = async ({ params }: { params: { id: number } }) => {
   return (
     <main className={product.main}>
       {/* todo: header */}
-      <Back>back</Back>
+      <div className={product.head}>
+        <Back>
+          <i className={icon.close} />
+        </Back>
+        <i className={icon.share} />
+      </div>
       <section className={product.info}>
         <h1>{productTitle}</h1>
         <div>
           <img src={prod.content.gallery[0]?.original} alt="" />
         </div>
-        <small>سیستم صوتی / باند و بلندگو</small>
-        <Form product={{ ...prod, id: params.id }} chunk={prod.chunk}/>
+        <small>{breadCrumbs.join(" / ")}</small>
+        <Form product={{ ...prod, id: params.id }} chunk={prod.chunk} />
         <div className={helper.dropdown}>
           <input type="checkbox" id="dropdownInput1" />
           <label htmlFor="dropdownInput1">
             <strong>درباره محصول</strong>
           </label>
-          <div className={helper.dropdownContent}>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
-            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
-            رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد
-            کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-            راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-            حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
-            طراحی اساسا مورد استفاده قرار گیرد.
-          </div>
+          <div className={helper.dropdownContent}>{/* {res.} */}</div>
         </div>
         <div className={helper.dropdown}>
           <input type="checkbox" id="dropdownInput2" />
           <label htmlFor="dropdownInput2">
             <strong>مشخصات فنی</strong>
           </label>
-          {/* <div>{productDesc}</div> */}
+          <div>{productDesc}</div>
           <div
             className={helper.dropdownContent}
             dangerouslySetInnerHTML={{ __html: productDesc }}

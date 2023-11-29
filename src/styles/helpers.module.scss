@@ -315,8 +315,34 @@
   padding: 16px;
   border: 0.5px solid #898989;
 
+  &FilterDropdown {
+    border: none;
+    border-bottom: .5px solid #E7E6E5;
+    width: 100%;
+    font-family: Yekan Bakh;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #fff;
+    text-align: right;
+    padding: 11px 0;
+    // display: flex;
+    // flex-direction: column;
 
+    >div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    &Content {
+      flex-direction: column;
+      align-items: start !important;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+  }
 
   &DoubleBtn {
     display: flex;
@@ -456,8 +482,8 @@
       text-align: center;
     }
 
-    .modalOtp{
-      input{
+    .modalOtp {
+      input {
         width: 2rem !important;
       }
     }
