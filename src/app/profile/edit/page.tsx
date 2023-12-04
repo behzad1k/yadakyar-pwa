@@ -1,5 +1,5 @@
+"use client"
 import TitleHeader from "@/components/header/TitleHeader";
-import Logout from "@/components/layout/Logout";
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 import { popupSlice } from "@/services/reducers";

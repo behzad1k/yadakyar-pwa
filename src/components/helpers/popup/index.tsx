@@ -9,12 +9,6 @@ const Popup = () => {
   const popupReducer = useAppSelector(state => state.popupReducer);
   const dispatch: any = useDispatch();
 
-  if (popupReducer.popups.length > 0 && popupReducer.popups[0].visible) {
-    document.body.classList.add('onPopup');
-  } else {
-    document.body.classList.remove('onPopup');
-  }
-
   const list = () => {
     const rows: any[] = [];
 
@@ -36,6 +30,14 @@ const Popup = () => {
 
     return rows;
   }
+
+  useEffect(() => {
+    if (popupReducer.popups.length > 0 && popupReducer.popups[0].visible) {
+      document.body.classList.add('onPopup');
+    } else {
+      document.body.classList.remove('onPopup');
+    }
+  }, [popupReducer.popups.length]);
 
   return (
     <>

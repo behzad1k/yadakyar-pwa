@@ -19,7 +19,7 @@ const Search = () => {
     const rows: ReactElement[] = [];
 
     data?.product?.map((product: any, index: number) => rows.push(
-      <ProductSecondary key={'product' + index} title={product.title} price={product.price} img={product.gallery[0]?.original} url={product.url}/>
+      <ProductSecondary id={product.id} key={'product' + index} title={product.title} price={product.price} img={product.gallery[0]?.original} url={product.url}/>
     ));
 
     return rows;

@@ -1,23 +1,22 @@
+"use client"
 import Header from "@/components/header/Header";
 import { popupSlice } from '@/services/reducers';
 import profile from "@/styles/profile.module.scss";
 import icon from "@/styles/icons.module.scss";
-import { useRouter } from "next/navigation";
 import { ReactElement } from 'react';
 import { useAppSelector } from "@/services/store";
 import { useDispatch } from 'react-redux';
 
 const Favorites = () => {
-  const router = useRouter();
-  const favorites = useAppSelector(state => state.userReducer.favorites);
+  const userReducer = useAppSelector(state => state.userReducer);
   const dispatch: any = useDispatch();
 
   const list = () => {
     const rows: ReactElement[] = [];
 
-    favorites.map((favorite: any) =>
+    userReducer?.favorites?.map((favorite: any, index) =>
       rows.push(
-        <div className={profile.favoritesCard}>
+        <div key={'fav' + index} className={profile.favoritesCard}>
           <div className={profile.favoritesCardDetail}>
             <span>{favorite.title}</span>
             <span className={profile.favoritesCardPrice}>

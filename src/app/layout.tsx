@@ -1,5 +1,4 @@
 import { Loading } from "@/components/helpers/loading";
-import Starter from '@/components/helpers/starter';
 import Splash from '@/components/layout/Splash';
 import Popup from "../components/helpers/popup";
 import Providers from "@/services/Providers";

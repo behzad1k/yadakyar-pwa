@@ -4,12 +4,10 @@ import { useAppSelector } from "@/services/store";
 import icon from "@/styles/icons.module.scss";
 import profile from "@/styles/profile.module.scss";
 import helper from "@/styles/helpers.module.scss";
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
 import { useDispatch } from "react-redux";
 import { popupSlice } from "@/services/reducers";
 import NewAddress from "./new/page";
-import restApi from "@/services/restApi";
-import { log } from "console";
 
 const Addresses = () => {
   const addressReducer = useAppSelector((state) => state.userReducer.addresses);
