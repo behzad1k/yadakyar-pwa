@@ -33,11 +33,11 @@ const Cart = () => {
       <Header />
       <div className={cart.totalPrise}>
         <strong>سبد خرید</strong>
-        <span className={cart.itemsCount}>({cartReducer?.totalProduct} آیتم )</span>
+        <span className={cart.itemsCount}>({cartReducer?.totalProduct || 0} آیتم )</span>
         <div>
           <small>جمع سبد خرید</small>
           <span className={cart.totalPriseNum}>
-            {tools.formatPrice(cartReducer?.sumProductPrice)}
+            {tools.formatPrice(cartReducer?.sumProductPrice || 0)}
             <small>تومان</small>
           </span>
         </div>

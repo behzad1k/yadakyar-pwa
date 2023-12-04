@@ -1,5 +1,6 @@
 import { popupSlice } from "@/services/reducers";
 import home from "@/styles/home.module.scss";
+import tools from '@/utils/tools';
 import Link from 'next/link';
 
 export const ProductPrimary = ({
@@ -17,6 +18,7 @@ export const ProductPrimary = ({
   oldPrice: number;
   id: number;
 }) => {
+  console.log(discount);
   return (
     <Link href={`/product/${id}`} >
       <article className={home.product}>
@@ -24,9 +26,15 @@ export const ProductPrimary = ({
           <img src={img} alt="" />
         </div>
         <h2 className={home.productTitle}>{title}</h2>
-        <span className={home.productPrice}>{price} تومان</span>
-        <s className={home.productOldPrice}>{oldPrice} تومان</s>
-        <span className={home.productDiscountPercent}>٪{discount}</span>
+        {discount > 0 ?
+          <>
+            <span className={home.productPrice}>{tools.formatPrice(price - discount)} تومان</span>
+            <s className={home.productOldPrice}>{tools.formatPrice(price)} تومان</s>
+            <span className={home.productDiscountPercent}>٪{tools.formatPrice(discount)}</span>
+          </>
+          :
+          <span className={home.productPrice}>{tools.formatPrice(price)} تومان</span>
+        }
         <div>
           <span className={home.productTag}>ارسال فوری</span>
         </div>

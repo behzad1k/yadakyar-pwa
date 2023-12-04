@@ -1,4 +1,4 @@
-import Form from "@/app/product/components/Form";
+import Form from "@/app/product/[id]/components/Form";
 import Back from "@/components/helpers/back";
 import product from "@/styles/product.module.scss";
 import icon from "@/styles/icons.module.scss";

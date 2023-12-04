@@ -27,15 +27,15 @@ const ProductReq = () => {
 
     data?.requests?.map((request: any, index) => {
       rows.push(
-          <div className={productReq.inQueueItemDropdown}>
+          <div className={productReq.inQueueItemDropdown} onClick={(e: any) => e.currentTarget.children[1].style.display = e.currentTarget.children[1].style.display == 'flex' ? 'none' : 'flex'}>
             <div className={productReq.inQueueItem}>
-            <span className={productReq.inQueueItemTitle}>
-              {` درخواست ${ ++index }`}
-              <small>{moment(request.date).format('jYYYY/jMM/jDD HH:MM')}</small>
-            </span>
+              <span className={productReq.inQueueItemTitle}>
+                {` درخواست ${ ++index }`}
+                <small>{moment(request.date).format('jYYYY/jMM/jDD HH:MM')}</small>
+              </span>
               <span className={productReq.inQueueItemStatus}>در حال بررسی</span>
             </div>
-            <div>
+            <div className={productReq.inQueueDets}>
               <span className={productReq.inQueueCar}>{request.carTitle}</span>
               <span className={productReq.inQueueProduct}>
                 {request.productTitle}

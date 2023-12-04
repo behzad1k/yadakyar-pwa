@@ -79,6 +79,7 @@ const Login = () => {
             <span className={helper.modalTitle}>ورود | ثبت نام</span>
             <p>شماره موبایل خود را وارد کنید</p>
             <input
+              className={helper.phoneInput}
               type="tel"
               value={phone}
               placeholder="09120000000"

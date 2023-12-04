@@ -1,4 +1,5 @@
 import Header from '@/components/header/Header';
+import Nav from '@/components/layout/Nav';
 import icon from "@/styles/icons.module.scss";
 import category from "@/styles/category.module.scss";
 import helper from "@/styles/helpers.module.scss";
@@ -78,6 +79,7 @@ const Category = async ({ params, searchParams }: any) => {
           </div>
           {productList()}
         </section>
+        <Nav />
       </main>
     </>
   );

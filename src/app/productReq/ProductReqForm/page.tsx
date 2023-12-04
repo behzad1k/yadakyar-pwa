@@ -3,14 +3,12 @@ import CarModal from '@/app/productReq/ProductReqForm/components/CarModal';
 import { popupSlice } from '@/services/reducers';
 import icon from '@/styles/icons.module.scss';
 import productReq from '@/styles/productReqForm.module.scss';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 const ProductReqForm = () => {
   const [partName, setPartName] = useState('');
-  const dispatch = useDispatch();
-  const router = useRouter();
+  const dispatch: any = useDispatch();
 
   return (
     <main className={productReq.container}>
@@ -21,7 +19,7 @@ const ProductReqForm = () => {
           <span>سریع قیمت بگیر!</span>
           <p>اسم قطعه مورد نظرت رو بنویس تا کمتر از دو دقیقه قیمتشو بهت بگیم</p>
         </div>
-        <i className={icon.chevronLeftBlue} onClick={() => router.back()}/>
+        <i className={icon.chevronLeftBlue} onClick={() => dispatch(popupSlice.hide())}/>
       </div>
       <div className={productReq.shortFormBody}>
         <strong>استعلام قیمت</strong>
@@ -29,7 +27,7 @@ const ProductReqForm = () => {
         <span>
           <i className={icon.plus} />
         </span>
-        <button onClick={() => dispatch(popupSlice.bottom(<CarModal partName={partName}/>))}>ثبت استعلام</button>
+        <button onClick={() => dispatch(popupSlice.bottom(<CarModal partName={partName} />))}>ثبت استعلام</button>
       </div>
     </main>
   );

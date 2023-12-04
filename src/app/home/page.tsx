@@ -45,12 +45,13 @@ const Home = async () => {
     const rows: ReactElement[] = [];
 
     firstCarousel.map((product: any) => {
+      console.log(product);
       rows.push(
         <ProductPrimary
           title={product.title}
-          price={product.price}
-          img={product.img}
-          discount={product.discount}
+          price={product.chunk[0]?.price}
+          img={product.image}
+          discount={product.chunk[0]?.discount}
           oldPrice={product.oldPrice}
           id={product.id}
         />

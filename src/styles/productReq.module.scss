@@ -113,7 +113,9 @@
 
 .inQueue {
   align-items: center;
-
+  &Dets {
+    display: none;
+  }
   &Car {
     display: none;
     color: #E84D0F;

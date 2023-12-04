@@ -1,15 +1,25 @@
 "use client"
 import Login from '@/components/layout/login';
+import Search from '@/components/layout/Search';
 import { popupSlice } from '@/services/reducers';
 import icon from "@/styles/icons.module.scss";
 import homeHeader from "@/styles/homeHeader.module.scss";
 import { isLoggedIn } from '@/utils/user';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
-const HomeHeader = () => {
+const HomeHeader = ({ query, setQuery }: any) => {
   const dispatch = useDispatch();
-
+  const ref = useRef(null);
+  const router = useRouter();
+  useEffect(() => {
+    if (query != undefined){
+      // @ts-ignore
+      ref.current?.focus();
+    }
+  }, []);
   return (
     <header className={homeHeader.main}>
       <div className={homeHeader.icons}>
@@ -29,9 +39,15 @@ const HomeHeader = () => {
         </Link>
       </div>
       <div className={homeHeader.search}>
-        <form action="">
-          <input type="text" placeholder="جست و جو" />
-        </form>
+        <input
+          ref={ref}
+          type="text"
+          placeholder="جست و جو"
+          onFocus={() => {
+            if(query == undefined)
+              dispatch(popupSlice.middle(<Search />));
+          }}
+          onChange={(text: any) => setQuery(text.target.value)}/>
       </div>
       <div className={homeHeader.carSelect}>
         <span>

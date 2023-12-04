@@ -26,8 +26,8 @@ const CarPicker = ({ partName }: any) => {
     });
 
     toast(res.message, { type: res.error ? 'error' : 'success' })
-
     dispatch(homeSlice.setLoading(false));
+    dispatch(popupSlice.hide());
   }
 
   const list = () => {

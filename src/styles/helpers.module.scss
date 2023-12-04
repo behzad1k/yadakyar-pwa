@@ -486,6 +486,7 @@
     }
 
     .modalOtp {
+      direction: ltr;
       input {
         width: 2rem !important;
       }
@@ -493,7 +494,9 @@
   }
 
 }
-
+.phoneInput{
+  width: 80%;
+}
 .carPicker{
   @extend .modal, .body;
   align-items: center;

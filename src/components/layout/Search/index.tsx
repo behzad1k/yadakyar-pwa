@@ -55,18 +55,18 @@ const Search = () => {
     <main>
       <Header onBack={() => dispatch(popupSlice.hide())} query={query} setQuery={setQuery}/>
       <section className={search.results}>
-        {query.length < 1 &&
-          <div className={search.suggest}>
-            <a href="#">
-              <div className={search.suggestCard}>
-                <div className={search.suggestCardImg}>
-                  <img src="/temp/searchsuggesttemp.svg" alt="" />
-                </div>
-                <span className={search.suggestCardTitle}>لگو/اسباب بازی</span>
-              </div>
-            </a>
-          </div>
-        }
+        {/* {query.length < 1 && */}
+        {/*   // <div className={search.suggest}> */}
+            {/* <a href="#"> */}
+            {/*   <div className={search.suggestCard}> */}
+            {/*     <div className={search.suggestCardImg}> */}
+            {/*       <img src="/temp/searchsuggesttemp.svg" alt="" /> */}
+            {/*     </div> */}
+            {/*     <span className={search.suggestCardTitle}>لگو/اسباب بازی</span> */}
+            {/*   </div> */}
+            {/* </a> */}
+          {/* // </div> */}
+        {/* // } */}
         {data?.product?.length > 0 &&
           <div className={search.resultsScroll}>
             {products()}
