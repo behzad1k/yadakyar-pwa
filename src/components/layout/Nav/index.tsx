@@ -19,7 +19,7 @@ const Nav = () => {
           <i className={icon.sparePartNav} />
           استعلام قیمت
         </Link>
-        <Link href="/shipping">
+        <Link href="/cart">
           <i className={icon.cartNav} />
           سبد خرید
         </Link>

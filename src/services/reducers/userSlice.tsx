@@ -1,6 +1,6 @@
 import restApi from '@/services/restApi';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ReactElement } from 'react';
+import Cookies from 'js-cookie';
 
 interface userState {
   profile: any;
@@ -15,15 +15,15 @@ const initialState: userState = {
 };
 
 const profile = createAsyncThunk('profile/fetch', async () => {
-  return await restApi('https://yadakyar.com/api/v1/profile/', true).get();
+  return await restApi(process.env.BASE_URL + '/v1/profile/', true).get();
 });
 
 const addresses = createAsyncThunk('addresses/fetch', async () => {
-  return await restApi('https://yadakyar.com/api/v1/profile/address/', true).get();
+  return await restApi(process.env.BASE_URL + '/v1/profile/address/', true).get();
 })
 
 const favorites = createAsyncThunk('favorites/fetch', async () => {
-  return await restApi('https://yadakyar.com/api/v1/profile/favorite/', true).get();
+  return await restApi(process.env.BASE_URL + '/v1/profile/favorite/', true).get();
 })
 
 const userSlice = createSlice({
@@ -33,6 +33,10 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
     .addCase(profile.fulfilled, (state, action) => {
+      if (action.payload.error){
+        Cookies.remove('app-token');
+        Cookies.remove('token');
+      }
       state.profile = action.payload?.data
     })
     .addCase(addresses.fulfilled, (state, action) => {

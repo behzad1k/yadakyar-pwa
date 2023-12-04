@@ -13,7 +13,9 @@ const HomeHeader = () => {
   return (
     <header className={homeHeader.main}>
       <div className={homeHeader.icons}>
-        <i className={icon.headphone} />
+        <a href="tel:02135000424">
+          <i className={icon.headphone} />
+        </a>
         <div className={homeHeader.logo}>
           <img src="/logo-white.png" alt="" />
         </div>

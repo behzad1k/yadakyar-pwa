@@ -11,20 +11,16 @@ const Product = async ({ params }: { params: { id: number } }) => {
   const res = await fetchData(params.id);
   const prod = res.data;
 
-  let productTitle = null;
-  if (prod.content.title) {
-    productTitle = prod.content.title;
-  }
   const breadCrumbs = prod.breadCrumbs;
 
   // let productColor = [prod.options[0]];
   const productDesc = prod.content.htmlText;
   const relatedProducts = prod.related;
 
-  const relatedProductsList = (relatedProducts: any[]) => {
+  const relatedProductsList = () => {
     const rows: ReactElement[] = [];
 
-    relatedProducts.map((product: any) => {
+    prod.related?.map((product: any) => {
       rows.push(
         <ProductSecondary
           title={product.title}
@@ -51,7 +47,7 @@ const Product = async ({ params }: { params: { id: number } }) => {
         <i className={icon.share} />
       </div>
       <section className={product.info}>
-        <h1>{productTitle}</h1>
+        <h1>{res.data.content.title}</h1>
         <div>
           <img src={prod.content.gallery[0]?.original} alt="" />
         </div>
@@ -81,7 +77,7 @@ const Product = async ({ params }: { params: { id: number } }) => {
           <span className={helper.carouselTitle}>محصولات مشابه</span>
         </div>
         <div className={helper.carouselScroll}>
-          {relatedProductsList(relatedProducts)}
+          {relatedProductsList()}
         </div>
       </section>
       <section className={helper.carousel}>

@@ -25,7 +25,7 @@ const Menu = () => {
   }
 
   const fetchData = async () => {
-    const res = await restApi('https://yadakyar.com/api/v1/menu/').get();
+    const res = await restApi(process.env.BASE_URL + '/v1/menu/').get();
 
     setData(Object.values(res.data));
   }
@@ -36,7 +36,7 @@ const Menu = () => {
 
   return (
     <main className={menu.main}>
-     <Header onBack={() => setCurrent(data.find((e: any) => e.id == current.parent) || rootParent)}/>
+     <Header />
       <section className={menu.body}>
         <span className={menu.title}>{current.title}</span>
         {data.length > 0 && list()}

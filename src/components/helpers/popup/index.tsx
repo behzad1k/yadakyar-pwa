@@ -9,28 +9,33 @@ const Popup = () => {
   const popupReducer = useAppSelector(state => state.popupReducer);
   const dispatch: any = useDispatch();
 
+  if (popupReducer.popups.length > 0 && popupReducer.popups[0].visible) {
+    document.body.classList.add('onPopup');
+  } else {
+    document.body.classList.remove('onPopup');
+  }
+
   const list = () => {
     const rows: any[] = [];
 
     popupReducer.popups.forEach((item, index) => {
       rows.push(
-
-        <div style={{ ...item.style,display: item.visible ? 'inline-block' : 'none'}}>
-          {item.content}
-        </div>
+        <>
+          <div
+            key={'popup' + index}
+            className={helper.modalOverLay}
+            style={{zIndex: index + 1, display: item.visible ? 'inline-block' : 'none'}}
+            onClick={() => dispatch(popupSlice.hide())}
+          />
+          <div style={{ ...item.style, zIndex: index + 2, display: item.visible ? 'inline-block' : 'none'}}>
+            {item.content}
+          </div>
+        </>
       )
     });
+
     return rows;
   }
-
-  useEffect(() => {
-    if (popupReducer.popups.length > 0 && popupReducer.popups[0].visible) {
-      document.body.classList.add('onPopup');
-    } else {
-      document.body.classList.remove('onPopup');
-    }
-  }, [popupReducer.popups.length]);
-
 
   return (
     <>

@@ -1,46 +1,27 @@
 "use client";
 import Header from "@/components/header/Header";
-import cart from "@/styles/cart.module.scss";
-import icon from "@/styles/icons.module.scss";
+import { useAppSelector } from '@/services/store';
 import helper from "@/styles/helpers.module.scss";
+import cart from "@/styles/cart.module.scss";
 import ProductCard from "@/app/cart/components/ProductCard";
-import CartHeader from "@/app/cart/components/Header";
-import { useDispatch } from "react-redux";
-import { useRouter } from "next/router";
-import { ReactElement } from "react";
+import tools from '@/utils/tools';
+import { useRouter } from 'next/navigation';
+import { ReactElement } from 'react';
 
 const Cart = () => {
-  const products = [
-    {
-      title: "باند و بلندگو ماشین مدل PL501 مکسیدر - Maxeeder",
-      img: "/temp/product-temp.png",
-      price: "2300000",
-    },
-    {
-      title: "باند و بلندگو ماشین مدل PL501 مکسیدر - Maxeeder",
-      img: "/temp/product-temp.png",
-      price: "2300000",
-    },
-    {
-      title: "باند و بلندگو ماشین مدل PL501 مکسیدر - Maxeeder",
-      img: "/temp/product-temp.png",
-      price: "2300000",
-    },
-    {
-      title: "باند و بلندگو ماشین مدل PL501 مکسیدر - Maxeeder",
-      img: "/temp/product-temp.png",
-      price: "2300000",
-    },
-  ];
+  const cartReducer = useAppSelector(state => state.cartReducer.cart);
+  const router = useRouter();
 
   const productList = () => {
     const rows: ReactElement[] = [];
-    products.map((product: any) => {
-      rows.push(
+    cartReducer?.basket?.map((product: any) => {
+      product?.gallery && rows.push(
         <ProductCard
           title={product.title}
-          img={product.img}
+          img={product?.gallery[0]?.original}
           price={product.price}
+          stock={product.stock}
+          chunk={product.chunk}
         />
       );
     });
@@ -52,11 +33,11 @@ const Cart = () => {
       <Header />
       <div className={cart.totalPrise}>
         <strong>سبد خرید</strong>
-        <span className={cart.itemsCount}>(۷ آیتم )</span>
+        <span className={cart.itemsCount}>({cartReducer?.totalProduct} آیتم )</span>
         <div>
           <small>جمع سبد خرید</small>
           <span className={cart.totalPriseNum}>
-            ۲۳,۲۳۵,۰۰۰
+            {tools.formatPrice(cartReducer?.sumProductPrice)}
             <small>تومان</small>
           </span>
         </div>
@@ -66,7 +47,7 @@ const Cart = () => {
         <div className={cart.fixBtnBackground}>
           <button
             className={helper.wideBtn}
-            // onClick={() => router.push("/shipping")}
+            onClick={() => router.push("/shipping")}
           >
             ثبت سفارش
           </button>

@@ -1,65 +1,69 @@
 "use client";
 import Header from "@/components/header/Header";
+import restApi from '@/services/restApi';
+import { useAppSelector } from '@/services/store';
 import icon from "@/styles/icons.module.scss";
 import shipping from "@/styles/shipping.module.scss";
 import helper from "@/styles/helpers.module.scss";
 import ShippingHeader from "@/app/shipping/components/Header";
 import AddressCard from "@/app/shipping/components/AddressCard";
-import { ReactElement, useState } from "react";
+import tools from '@/utils/tools';
+import { ReactElement, useEffect, useState } from 'react';
 import MethodCard from "../components/MethodCard";
 
-const AddressStep = ({ setStep }) => {
-  const [methodSelected, setMethodSelected] = useState(false);
-  const shippingMethods = [
-    { title: "پست پیشتاز", description: "ارسال ۲ تا ۴ روز کاری", logo: "" },
-    { title: "وانت", description: "ارسال تا ۱ روز کاری", logo: "" },
-    {
-      title: "تیپاکس",
-      description: "تا ۲۴ ساعت تهران و ۷۲ ساعت شهرستان",
-      logo: "",
-    },
-    { title: "پیک موتوری", description: "فقط استان تهران", logo: "" },
-  ];
+const AddressStep = ({ setStep, setAddress, address, setSendType, sendType }: any) => {
+  const addresses = useAppSelector(state => state.userReducer.addresses);
+  const cartReducer = useAppSelector(state => state.cartReducer.cart);
+  const [sendTypes, setSendTypes] = useState([]);
 
-  const addresses = [
-    {
-      title: "دفتر کار",
-      address:
-        "تهران ، خیابان امام خمینی ، میدان امام خمینی ،خیابان شیخ هادی ، کوچه ارجمند ، پلاک ۲۳ ، واحد ۲ ",
-      phone: "۰۹۱۲۳۴۳۵۶۷۷",
-    },
-  ];
-
-  const shippingMehtodList = (methods) => {
+  const shippingMehtodList = () => {
     const rows: ReactElement[] = [];
-    methods.map((method: any) => {
+
+    sendTypes?.map((method: any) => {
       rows.push(
         <MethodCard
           title={method.title}
           description={method.description}
           onClick={() => {
-            setMethodSelected(true);
+            setSendType(method);
           }}
-          methodSelected={methodSelected}
+          methodSelected={sendType?.id == method.id}
         />
       );
     });
+
     return rows;
   };
 
   const addressesList = () => {
     const rows: ReactElement[] = [];
-    addresses.map((address) => {
+
+    addresses.map((addr) => {
       rows.push(
         <AddressCard
-          title={address.title}
-          address={address.address}
-          phone={address.phone}
+          title={addr.name}
+          address={addr.line}
+          phone={addr.mobile}
+          onClick={() => setAddress(addr)}
+          selected={address?.id === addr.id}
         />
       );
     });
+
     return rows;
   };
+
+  const fetchSendTypes = async () => {
+    const res = await restApi(process.env.BASE_URL + '/v1/sendType/').get();
+
+    if (!res.error){
+      setSendTypes(res.data);
+    }
+  };
+
+  useEffect(() => {
+    fetchSendTypes()
+  }, []);
 
   return (
     <main className={shipping.body}>
@@ -95,16 +99,16 @@ const AddressStep = ({ setStep }) => {
       <section className={shipping.method}>
         <strong>روش ارسال را انتخاب کنید</strong>
         <div className={shipping.methodSelect}>
-          {shippingMehtodList(shippingMethods)}
+          {shippingMehtodList()}
         </div>
       </section>
       <div className={shipping.fixBtnBackground}>
-        <button className={shipping.submitBtn} onClick={() => setStep(2)}>
+        <button className={shipping.submitBtn} onClick={() => setStep(prev => prev + 1)}>
           مشاهده فاکتور و پرداخت
         </button>
         <div className={shipping.fixedPriceBox}>
           <small>جمع سبد خرید</small>
-          <span>۲۳,۲۳۵,۰۰۰ تومان</span>
+          <span>{tools.formatPrice(cartReducer?.sumProductPrice)} تومان</span>
         </div>
       </div>
     </main>

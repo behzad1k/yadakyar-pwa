@@ -1,4 +1,6 @@
 import { Loading } from "@/components/helpers/loading";
+import Starter from '@/components/helpers/starter';
+import Splash from '@/components/layout/Splash';
 import Popup from "../components/helpers/popup";
 import Providers from "@/services/Providers";
 import type { Metadata } from "next";
@@ -36,6 +38,7 @@ export default function RootLayout({
               fontFamily: "Yekan Bakh",
             }}
           />
+          <Splash/>
           {children}
           <Popup />
           <Loading />

@@ -85,3 +85,10 @@ img {
 .loading div {
   box-sizing: content-box;
 }
+
+.checkbox {
+  content: url("/svg/checkbox.svg");
+}
+.checkbox-active{
+  content: url("/svg/checkbox-checked.svg") !important;
+}

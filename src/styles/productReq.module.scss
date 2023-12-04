@@ -1,3 +1,6 @@
+.main{
+  padding-top: 80px;
+}
 .newReq {
   border-radius: 8px;
   background-color: #fff;
@@ -112,6 +115,7 @@
   align-items: center;
 
   &Car {
+    display: none;
     color: #E84D0F;
     font-size: 10px;
     font-weight: 400;
@@ -175,4 +179,8 @@
       }
     }
   }
+}
+
+.active{
+  display: flex;
 }

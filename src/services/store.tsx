@@ -1,6 +1,7 @@
 import popupReducer from '@/services/reducers/popupSlice';
 import homeReducer from '@/services/reducers/homeSlice';
 import userReducer from '@/services/reducers/userSlice';
+import cartReducer from '@/services/reducers/cartSlice';
 import { AnyAction, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { combineReducers } from 'redux';
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   popupReducer,
   homeReducer,
   userReducer,
+  cartReducer,
 });
 
 const store = configureStore({

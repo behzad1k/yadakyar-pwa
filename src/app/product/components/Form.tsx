@@ -1,17 +1,22 @@
 "use client"
 import restApi from '@/services/restApi';
 import Product from "@/styles/product.module.scss";
+import Cookies from 'js-cookie';
 import { ReactElement, useState } from 'react';
 
 const Form = ({ product, chunk, stock = 1 }) => {
   const [selected, setSelected] = useState(chunk[0] || undefined);
   console.log(product);
   const addToBasket = async () => {
-    const res = await restApi('https://yadakyar.com/api/v1/basket/add/', true, true).post({
+    const res = await restApi(process.env.BASE_URL + '/v1/basket/add/', true, true).post({
       stock: stock,
       chunk: selected.id,
       product: product.id,
-    })
+    });
+
+    if (!res.error){
+      Cookies.set('order-token', res.data);
+    }
   };
   const list = () => {
     const rows: ReactElement[] = [];

@@ -47,7 +47,7 @@ const NewAddress = () => {
   };
 
   const fetchData = async () => {
-    const res = await restApi("https://yadakyar.com/api/v1/state/").get();
+    const res = await restApi(process.env.BASE_URL + "/v1/state/").get();
     setProvinces(Object.values(res.data));
   };
 

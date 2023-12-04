@@ -6,7 +6,7 @@ const apiRequest = async (url: string, useAccessToken = false, useOrderToken = f
   }
 
   if (useOrderToken) {
-    headers['order-token'] = Cookies.get('orderToken') || '';
+    headers['order-token'] = Cookies.get('order-token') || '';
   }
 
   if (useAccessToken) {

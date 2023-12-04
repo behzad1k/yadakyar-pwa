@@ -11,9 +11,12 @@
   &Banner {
     border-radius: 8px;
     width: 100%;
-    max-width: 380px;
     overflow: hidden;
+  }
+  img{
+    max-width: 380px;
     height: 100px;
+    object-fit: contain;
   }
 }
 
@@ -65,7 +68,28 @@
     line-height: 16px;
   }
 }
-
+.filterModal{
+  overflow: scroll;
+  width: 100%;
+}
+.filterModalCheck{
+  display: flex;
+  gap: 10px
+}
+.removePrice{
+  margin-top: 40px;
+  color: #AAA;
+  font-size: 14px;
+}
+.priceModalRanges{
+  color: #000 !important;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  font-size: 16px;
+}
+.filterModalContainer{
+  background-color: #FFF;
+}
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +119,7 @@
     }
 
     span {
-      color: 00142A;
+      color: #00142A;
       font-size: 12px;
       font-weight: 400;
       line-height: 24px;

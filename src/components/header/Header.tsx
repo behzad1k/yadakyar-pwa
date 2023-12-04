@@ -4,13 +4,14 @@ import { popupSlice } from '@/services/reducers';
 import restApi from '@/services/restApi';
 import helper from "@/styles/helpers.module.scss";
 import icon from "@/styles/icons.module.scss";
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-const Header = ({ onBack, query, setQuery }: any) => {
+const Header = ({ onBack = undefined, query, setQuery }: any) => {
   const dispatch: any = useDispatch();
   const ref = useRef(null);
-
+  const router = useRouter();
   useEffect(() => {
     if (query != undefined){
       // @ts-ignore
@@ -20,7 +21,9 @@ const Header = ({ onBack, query, setQuery }: any) => {
 
   return (
     <header className={helper.header}>
-      <i className={icon.headphone}></i>
+      <a href="tel:02135000424">
+        <i className={icon.headphone}></i>
+      </a>
       <form action="">
         <input
           ref={ref}
@@ -32,7 +35,7 @@ const Header = ({ onBack, query, setQuery }: any) => {
           }}
           onChange={(text: any) => setQuery(text.target.value)}/>
       </form>
-      <i onClick={onBack} className={icon.chevronLeft}></i>
+      <i onClick={() => onBack ? onBack() : router.back() } className={icon.chevronLeft}></i>
     </header>
   );
 };

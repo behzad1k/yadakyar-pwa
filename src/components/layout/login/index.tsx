@@ -1,5 +1,6 @@
 "use client";
 import { homeSlice, popupSlice } from "@/services/reducers";
+import { profile } from '@/services/reducers/userSlice';
 import restApi from "@/services/restApi";
 import { useState } from "react";
 import OtpInput from "react-otp-input";
@@ -18,7 +19,7 @@ const Login = () => {
   const login = async () => {
     dispatch(homeSlice.setLoading(true));
 
-    const res = await restApi("https://yadakyar.com/api/v1/login/").post({
+    const res = await restApi(process.env.BASE_URL + '/v1/login/').post({
       mobile: phone,
     });
 
@@ -36,7 +37,7 @@ const Login = () => {
   const verify = async () => {
     dispatch(homeSlice.setLoading(true));
 
-    const res = await restApi("https://yadakyar.com/api/v1/verify/").post({
+    const res = await restApi(process.env.BASE_URL + '/v1/verify/').post({
       mobile: phone,
       code: otp,
     });
@@ -44,8 +45,8 @@ const Login = () => {
     if (!res.error) {
       Cookies.set("token", res.data.token);
       toast("شما با موفقیت وارد شدید", { type: "success" });
-      setStep((prevState) => prevState + 1);
-      handleStep();
+      dispatch(profile());
+      dispatch(popupSlice.hide());
     } else {
       toast("خطایی رخ داده است. لطفا مجددا تلاش کنید.", { type: "success" });
       
@@ -59,8 +60,6 @@ const Login = () => {
       login();
     } else if (step == 2) {
       verify();
-    } else {
-      dispatch(popupSlice.hide());
     }
   };
 

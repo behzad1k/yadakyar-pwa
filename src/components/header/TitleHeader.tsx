@@ -8,7 +8,9 @@ const TitleHeader = ({ onBack, title }: any) => {
   const dispatch: any = useDispatch();
   return (
     <header className={helper.headerWithTitle}>
-      <i className={icon.headphone} />  
+      <a href="tel:02135000424">
+        <i className={icon.headphone} />
+      </a>
       <span>{title || 'حساب کاربری'}</span>
       <i className={icon.chevronLeft} onClick={() => onBack || dispatch(popupSlice.hide())}/>
     </header>

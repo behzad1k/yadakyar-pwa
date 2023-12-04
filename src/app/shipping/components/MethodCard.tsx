@@ -15,7 +15,7 @@ const MethodCard = ({
 }: {
   title: string;
   description: string;
-  logo: string;
+  logo?: string;
   methodSelected: any;
   onClick: () => void; 
 }) => {

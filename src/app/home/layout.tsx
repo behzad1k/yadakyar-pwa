@@ -15,7 +15,7 @@ export default function Layout({
   return (
       <main>
         <HomeHeader />
-          {children}
+        {children}
         <Nav />
       </main>
   )

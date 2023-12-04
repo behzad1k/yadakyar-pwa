@@ -47,7 +47,7 @@ const Addresses = () => {
         />
         <span
           className={helper.wideBtn}
-          onClick={(event: any) => {
+          onClick={() => {
             dispatch(popupSlice.full(<NewAddress />));
           }}
         >
