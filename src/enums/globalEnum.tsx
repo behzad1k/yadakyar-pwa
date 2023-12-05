@@ -1,6 +1,8 @@
 namespace globalEnum {
   export enum MediaType {
-    bannerSlider = 'bannerSlider'
+    bannerSlider = 'bannerSlider',
+    banner = 'banner',
+    slide = 'slide'
   }
 
   export enum SearchType {

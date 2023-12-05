@@ -187,27 +187,26 @@
   }
 
 
+}
+.shortcut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
   &OverlayBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+
 
     >span:first-child {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background-color: #E84D0F;
-    }
-
-    >span:last-child {
       color: #6A7798;
       font-size: 10px;
       line-height: 17px;
     }
   }
 }
-
 .blog {
   display: flex;
   flex-wrap: wrap;

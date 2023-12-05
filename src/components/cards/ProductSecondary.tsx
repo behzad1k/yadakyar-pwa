@@ -5,15 +5,14 @@ const ProductSecondary = ({
   title,
   price,
   img,
-  url,
   id
 }: {
   title: string;
   price: number;
   img: string;
-  url: string;
   id: number;
 }) => {
+  console.log(img);
   return (
     <Link href={`/product/${id}`} >
       <article className={home.productSML}>
