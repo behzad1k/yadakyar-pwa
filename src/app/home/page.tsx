@@ -4,7 +4,6 @@ import globalEnum from '@/enums/globalEnum';
 import home from "@/styles/home.module.scss";
 import icon from "@/styles/icons.module.scss";
 import Link from 'next/link';
-import Banners from "./Banners";
 import Blog from "./Blog";
 import ProductSecondary from "@/components/cards/ProductSecondary";
 import { ReactElement } from "react";

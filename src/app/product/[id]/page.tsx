@@ -26,7 +26,6 @@ const Product = async ({ params }: { params: { id: number } }) => {
           title={product.title}
           price={product.chunk[0].price}
           img={product.image}
-          url={product.url}
           id={product.id}
         />
       );
