@@ -11,15 +11,15 @@ const Nav = () => {
           <i className={icon.homeNav} />
           خانه
         </Link>
-        <Link href="/menu">
+        <Link href="#">
           <i className={icon.menuNav} />
-          دسته بندی
+          نیازمندی
         </Link>
         <Link href='/productReq'>
           <i className={icon.sparePartNav} />
-          استعلام قیمت
+          حواله
         </Link>
-        <Link href="/cart">
+        <Link href="#">
           <i className={icon.cartNav} />
           سبد خرید
         </Link>

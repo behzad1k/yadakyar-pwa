@@ -4,6 +4,7 @@
   margin: 1.5rem auto;
   gap: 20px;
   width: calc(100% - 32px);
+  padding-bottom: 100px;
 }
 
 .slider {
@@ -133,7 +134,7 @@
   }
 
   .productPrice {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   &Details {
@@ -199,6 +200,13 @@
     flex-direction: column;
     align-items: center;
 
+    img{
+      max-width: 85px;
+      //filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(303deg) brightness(104%) contrast(101%);
+      background-color: #e84d0f;
+      border-radius: 100px;
+      padding: 10px;
+    }
 
     span {
       margin-top: 7px;

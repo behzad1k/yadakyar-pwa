@@ -34,14 +34,34 @@ const Home = async () => {
   };
 
   const productsSecondaryList = (list: any[]) => {
+
+    const newList = [{
+      title: 'موجودی تومانی',
+      price: 3850000,
+      img: '/temp/toman.png',
+      id: 1
+
+    },{
+      title: 'موجودی دلار',
+      price: 367,
+      img: '/temp/doller.png',
+      id: 2
+
+    },{
+      title: 'موجودی افغانی',
+      price: 140420,
+      img: '/temp/afghan.png',
+      id: 3
+
+    }]
     const rows: ReactElement[] = [];
 
-    list.map((product: any) => {
+    newList.map((product: any) => {
       rows.push(
         <ProductSecondary
           title={product.title}
-          price={product.chunk[0]?.price}
-          img={product.image}
+          price={product.price}
+          img={product.img}
           id={product.id}
         />
       );
@@ -53,46 +73,46 @@ const Home = async () => {
     <>
       <main className={home.main}>
         <div className={home.slider}>
-          <img src="/temp/slider-temp.jpeg" alt=""/>
+          <img src="/temp/banner1top.jpg" alt=""/>
         </div>
-        <section className={home.topBanners}>
-          <div className={home.topBanners1}>
-            <a href="#">
-              <img src={banners[0]?.data[0]?.image} alt=""/>
-            </a>
-          </div>
-          <div className={home.topBanners2}>
-            <a href="#">
-              <img src={banners[2]?.data[0]?.image} alt=""/>
-            </a>
-          </div>
-          <div className={home.topBanners3}>
-            <a href="#">
-              <img src={banners[1]?.data[0]?.image} alt=""/>
-            </a>
-          </div>
-        </section>
-        <section className={helper.carousel}>
-          <div className={helper.carouselHead}>
-            <span className={helper.carouselTitle}>{sliders[0]?.title}</span>
-            <span className={helper.carouselTimer}>
-              ۲۳:۵۰:۰۹
-              <i className={icon.timer}></i>
-            </span>
-            <a className={helper.carouselLink}>مشاهده همه</a>
-          </div>
-          <div className={helper.carouselScroll}>
-            {productsPrimaryList(sliders[0]?.data)}
-          </div>
-        </section>
+        {/* <section className={home.topBanners}> */}
+          {/* <div className={home.topBanners1}> */}
+          {/*   <a href="#"> */}
+          {/*     <img src={banners[0]?.data[0]?.image} alt=""/> */}
+          {/*   </a> */}
+          {/* </div> */}
+          {/* <div className={home.topBanners2}> */}
+          {/*   <a href="#"> */}
+          {/*     <img src={banners[2]?.data[0]?.image} alt=""/> */}
+          {/*   </a> */}
+          {/* </div> */}
+          {/* <div className={home.topBanners3}> */}
+          {/*   <a href="#"> */}
+          {/*     <img src={banners[1]?.data[0]?.image} alt=""/> */}
+          {/*   </a> */}
+          {/* </div> */}
+        {/* </section> */}
+        {/* <section className={helper.carousel}> */}
+        {/*   <div className={helper.carouselHead}> */}
+        {/*     <span className={helper.carouselTitle}>{sliders[0]?.title}</span> */}
+        {/*     <span className={helper.carouselTimer}> */}
+        {/*       ۲۳:۵۰:۰۹ */}
+        {/*       <i className={icon.timer}></i> */}
+        {/*     </span> */}
+        {/*     <a className={helper.carouselLink}>مشاهده همه</a> */}
+        {/*   </div> */}
+        {/*   <div className={helper.carouselScroll}> */}
+        {/*     {productsPrimaryList(sliders[0]?.data)} */}
+        {/*   </div> */}
+        {/* </section> */}
         <div className={home.wideBanner}>
           <a href="#">
-            <img src="/temp/wide-banner.png" alt="" />
+            <img src="/temp/banner-price.jpg" alt="" />
           </a>
         </div>
         <section className={helper.carousel}>
           <div className={helper.carouselHead}>
-            <span className={helper.carouselTitle}>{sliders[1].title}</span>
+            <span className={helper.carouselTitle}>کیف پول</span>
             <a className={helper.carouselLink}>مشاهده همه</a>
           </div>
           <div className={helper.carouselScroll}>{productsSecondaryList(sliders[1]?.data)}</div>
@@ -102,72 +122,72 @@ const Home = async () => {
             <Link href="/productReq">
               <i className={icon.sparePartBlue}></i>
               <span>سریع قیمت بگیر!</span>
-              <p>کمتر از دو دقیقه اسم قطعه مورد نظرت رو بنویس تا بهت بگیم</p>
+              <p>کمتر از پنج ثانیه موجودی خود را از تومان به دلار یا افغانی تبدیل کن</p>
             </Link>
           </div>
           <div className={home.shortcut}>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test3.png" alt="" />
-              <span>روغن ماشین</span>
+              <img src="/svg/new/sim-card-svgrepo-com.svg" alt="" />
+              <span>خرید شارژ</span>
             </div>
           </a>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test2.png" alt="" />
-              <span>لاستیک</span>
+              <img src="/svg/new/snapp-svgrepo-com.svg" alt="" />
+              <span>اسنپ!</span>
             </div>
           </a>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test1.png" alt="" />
-              <span>آیینه بغل</span>
+              <img src="/svg/new/meat-on-the-bone-1-svgrepo-com.svg" alt="" />
+              <span>خرید گوشت</span>
             </div>
           </a>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test6.png" alt="" />
-              <span>شمع</span>
+              <img src="/svg/new/grocery-store-bakery-svgrepo-com.svg" alt="" />
+              <span>کالای سوپرمارکتی</span>
             </div>
           </a>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test5.png" alt="" />
-              <span>گیربکس</span>
+              <img src="/svg/new/speaker-2-svgrepo-com.svg" alt="" />
+              <span>ثبت آگهی</span>
             </div>
           </a>
           <a href="#">
             <div className={home.shortcutOverlayBtn}>
-              <img src="/temp/test4.png" alt="" />
-              <span>روکش صندلی</span>
+              <img src="/svg/new/airplane-svgrepo-com.svg" alt="" />
+              <span>بلیط هواپیما</span>
             </div>
           </a>
           </div>
         </section>
-        <section className={helper.carousel}>
-          <div className={helper.carouselHead}>
-            <span className={helper.carouselTitle}>{sliders[2]?.title}</span>
-            <a className={helper.carouselLink}>مشاهده همه</a>
-          </div>
-          <div className={helper.carouselScroll}>
-            {productsPrimaryList(sliders[2].data)}
-          </div>
-        </section>
-        <div className={home.wideBanner}>
-          <a href="#">
-            <img src="/temp/wide-banner.png" alt="" />
-          </a>
-        </div>
-        <section className={helper.carousel}>
-          <div className={helper.carouselHead}>
-            <span className={helper.carouselTitle}>{sliders[3]?.title}</span>
-            <a className={helper.carouselLink}>مشاهده همه</a>
-          </div>
-          <div className={helper.carouselScroll}>
-            {productsPrimaryList(sliders[3].data)}
-          </div>
-        </section>
-        <Blog />
+        {/* <section className={helper.carousel}> */}
+        {/*   <div className={helper.carouselHead}> */}
+        {/*     <span className={helper.carouselTitle}>{sliders[2]?.title}</span> */}
+        {/*     <a className={helper.carouselLink}>مشاهده همه</a> */}
+        {/*   </div> */}
+        {/*   <div className={helper.carouselScroll}> */}
+        {/*     {productsPrimaryList(sliders[2].data)} */}
+        {/*   </div> */}
+        {/* </section> */}
+        {/* <div className={home.wideBanner}> */}
+        {/*   <a href="#"> */}
+        {/*     <img src="/temp/wide-banner.png" alt="" /> */}
+        {/*   </a> */}
+        {/* </div> */}
+        {/* <section className={helper.carousel}> */}
+        {/*   <div className={helper.carouselHead}> */}
+        {/*     <span className={helper.carouselTitle}>{sliders[3]?.title}</span> */}
+        {/*     <a className={helper.carouselLink}>مشاهده همه</a> */}
+        {/*   </div> */}
+        {/*   <div className={helper.carouselScroll}> */}
+        {/*     {productsPrimaryList(sliders[3].data)} */}
+        {/*   </div> */}
+        {/* </section> */}
+        {/* <Blog /> */}
       </main>
     </>
   );

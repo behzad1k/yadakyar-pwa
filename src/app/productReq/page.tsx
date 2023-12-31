@@ -18,27 +18,33 @@ const ProductReq = () => {
   const [tab, setTab] = useState(tabEnum.ProductReq.request);
   const [data, setData] = useState<any>();
   const tabTitles = {
-    [tabEnum.ProductReq.order]: 'اعلام شده',
-    [tabEnum.ProductReq.request]: 'در انتظار قیمت',
+    [tabEnum.ProductReq.order]: 'دریافت شده',
+    [tabEnum.ProductReq.request]: 'در انتظار ارسال',
   }
-
+  // مبلغ 2300000 هزار تومان از کاربر golahmad2626 در ساعت 12:45 دقیقه دیروز دریافت شد
   const requestList = () => {
     const rows: ReactElement[] = [];
-
-    data?.requests?.map((request: any, index) => {
+    const newlist = [
+      {
+        title: 'hi',
+        date: "2023/12/28",
+        second: 1200000
+      }
+    ]
+    newlist?.map((request: any, index) => {
       rows.push(
           <div className={productReq.inQueueItemDropdown} onClick={(e: any) => e.currentTarget.children[1].style.display = e.currentTarget.children[1].style.display == 'flex' ? 'none' : 'flex'}>
             <div className={productReq.inQueueItem}>
               <span className={productReq.inQueueItemTitle}>
-                {` درخواست ${ ++index }`}
-                <small>{moment(request.date).format('jYYYY/jMM/jDD HH:MM')}</small>
+                مبلغ ۱۲۰۰۰۰۰ افغانی دریافت به صورت نقدی در هرات توسط دوشنبه مرادی به شماره پاسپورت P2383200
+                <small>{request.date}</small>
               </span>
-              <span className={productReq.inQueueItemStatus}>در حال بررسی</span>
+              <span className={productReq.inQueueItemStatus}>اتمام</span>
             </div>
             <div className={productReq.inQueueDets}>
-              <span className={productReq.inQueueCar}>{request.carTitle}</span>
+              <span className={productReq.inQueueCar}>{request.title}</span>
               <span className={productReq.inQueueProduct}>
-                {request.productTitle}
+                {tools.formatPrice(request.second)} افغانی
               </span>
             </div>
           </div>
@@ -50,16 +56,23 @@ const ProductReq = () => {
 
   const orderList = () => {
     const rows: ReactElement[] = [];
-
-    data?.orders?.map((order: any, index) => {
+    const newlist = [
+      {
+        title: 'hi',
+        date: "2023/12/28",
+        second: 'hey',
+        price: 2300000
+      }
+    ]
+    newlist?.map((order: any, index) => {
       rows.push(
         <div className={productReq.finishedItemDropdown} onClick={(e: any) => e.currentTarget.children[1].style.display = e.currentTarget.children[1].style.display == 'flex' ? 'none' : 'flex'}>
           <div className={productReq.finishedItem}>
             <span className={productReq.finishedItemTitle}>
-              {` درخواست ${++index}`}
-              <small>{moment(order.date).format('jYYYY/jMM/jDD HH:MM')}</small>
+مبلغ 2300000 هزار تومان از کاربر golahmad2626 در ساعت 12:45 دقیقه دیروز دریافت شد
+              <small>{order.date}</small>
             </span>
-            <span className={productReq.finishedItemStatus}>{order.price > 0 ? 'اعلام قیمت' : 'در انتظار قیمت دهی'}</span>
+            <span className={productReq.finishedItemStatus}>اتمام</span>
           </div>
 
           <div className={productReq.finishedProduct}>
@@ -100,11 +113,11 @@ const ProductReq = () => {
       <div className={productReq.tabs} >
         <span className={tab == tabEnum.ProductReq.request ? productReq.active : ''} onClick={() => setTab(tabEnum.ProductReq.request)}>
           <small>{data?.requests?.length}</small>
-          در انتظار قیمت
+          در انتظار ارسال
         </span>
         <span className={tab == tabEnum.ProductReq.order ? productReq.active : ''} onClick={() => setTab(tabEnum.ProductReq.order)}>
           <small>{data?.orders?.length}</small>
-          اعلام شده
+          ارسال شده
         </span>
       </div>
       {tab === tabEnum.ProductReq.request ?

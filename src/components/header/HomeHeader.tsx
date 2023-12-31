@@ -27,7 +27,7 @@ const HomeHeader = ({ query, setQuery }: any) => {
           <i className={icon.headphone} />
         </a>
         <div className={homeHeader.logo}>
-          <img src="/logo-white.png" alt="" />
+          <img src="/new-logo.jpg" alt="" />
         </div>
         <Link href="/profile" onClick={(event: any) => {
           if (!isLoggedIn()) {
@@ -51,8 +51,8 @@ const HomeHeader = ({ query, setQuery }: any) => {
       </div>
       <div className={homeHeader.carSelect}>
         <span>
-          ماشینت چیه؟
-          <small> | انتخاب کن</small>
+          کاربر عزیز سید عماد
+          <small> | خوش آمدید!</small>
         </span>
         <i className={icon.chevronDownWhite} />
       </div>
