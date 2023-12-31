@@ -17,19 +17,19 @@ const Category = async ({ params, searchParams }: any) => {
   const productList = () => {
     const rows: ReactElement[] = [];
 
-    cat.products.slice(0, 10).map((product, index) =>
-      rows.push(
-        <ProductCard
-          key={index}
-          title={product.title}
-          price={product.price}
-          img={product.gallery[0]?.original}
-          discount={product.discount}
-          oldPrice={product.oldPrice}
-          id={product.id}
-        />
-      )
-    );
+    // cat.products.slice(0, 10).map((product, index) =>
+    //   rows.push(
+    //     <ProductCard
+    //       key={index}
+    //       title={product.title}
+    //       price={product.price}
+    //       img={product.gallery[0]?.original}
+    //       discount={product.discount}
+    //       oldPrice={product.oldPrice}
+    //       id={product.id}
+    //     />
+    //   )
+    // );
 
     return rows;
   };
