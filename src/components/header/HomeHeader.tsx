@@ -27,7 +27,7 @@ const HomeHeader = ({ query, setQuery }: any) => {
           <i className={icon.headphone} />
         </a>
         <div className={homeHeader.logo}>
-          <img src="/new-logo.jpg" alt="" />
+          <img src="/new-logo.png" alt="" />
         </div>
         <Link href="/profile" onClick={(event: any) => {
           if (!isLoggedIn()) {

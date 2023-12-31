@@ -72,7 +72,7 @@ const Login = () => {
       <div className={`${helper.modal} ${helper.modalLogIn}`}>
         <i className={icon.close} />
         <div className={helper.modalLogo}>
-          <img src="/new-logo.jpg" alt="" />
+          <img src="/new-logo.png" alt="" />
         </div>
         {step == 1 ? (
           <>
